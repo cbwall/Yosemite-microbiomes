@@ -1,0 +1,89 @@
+---
+title: "Yosemite microbiomes"
+author: "C Wall"
+date: "2/16/2022"
+output:
+  html_document:
+    code_folding: hide
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r global options, results="hide", warning=FALSE, message=FALSE}
+if (!require('knitr')) install.packages('knitr'); library('knitr')
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.align='center')
+
+# load packages
+if (!require("pacman")) install.packages("pacman") # for rapid install if not in library
+
+# use pacman to load CRAN packages missing
+pacman::p_load('knitr', 'tidyverse', 'knitr', 'magrittr', 'effects', 'devtools', 
+               'stringi', 'dplyr', "ggplot2", "gridExtra")
+
+#upload Bioconductor (now BiocManager or R v. > 3.5.0 ), can specify different version in last line
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.10")
+
+#install specific BiocManager packages
+BiocManager::install(c(
+    "Decipher", "phangorn"
+  ), update = TRUE, ask = FALSE)
+
+```
+
+```{r}
+
+miseq_path<-"./data/Miseq_test" # CHANGE to the directory containing the fastq files after unzipping.
+list.files(miseq_path)
+
+## Filter and Trim
+### remove low quality reads, trim to consistent length
+
+# Sort ensures forward/reverse reads are in same order
+fnFs <- sort(list.files(miseq_path, pattern="_R1_001.fastq"))
+fnRs <- sort(list.files(miseq_path, pattern="_R2_001.fastq"))
+
+# Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq
+sampleNames <- sapply(strsplit(fnFs, "_"), `[`, 2)
+
+# Specify the full path to the fnFs and fnRs
+fnFs <- file.path(miseq_path, fnFs)
+fnRs <- file.path(miseq_path, fnRs)
+fnFs[1:3]
+
+# quality score plot for forward reads
+plotQualityProfile(fnFs[10:11])
+
+# quality score plot for reverse reads
+plotQualityProfile(fnRs[10:11])
+
+
+```
+  
+Do the forward and reverse reads maintain high quality throughout?  
+Can truncate based on quality for reads. The truncating value does not have to be same for F and R.  
+Cam also choose to trim the first 10 nucleotides of each read... why? Based on empirical observations across many Illumina datasets that these base positions are particularly likely to contain pathological errors.
+
+We define the filenames for the filtered fastq.gz files:
+```{r}
+filt_path <- file.path(miseq_path, "filtered") # Place filtered files in filtered/ subdirectory
+if(!file_test("-d", filt_path)) dir.create(filt_path)
+filtFs <- file.path(filt_path, paste0(sampleNames, "_F_filt.fastq.gz"))
+filtRs <- file.path(filt_path, paste0(sampleNames, "_R_filt.fastq.gz"))
+
+```
+  
+We combine these trimming parameters with standard filtering parameters, the most important being the enforcement of a maximum of **2 expected errors per-read** (Edgar and Flyvbjerg 2015). Trimming and filtering is performed on paired reads jointly, i.e. both reads must pass the filter for the pair to pass.
+
+```{r}
+out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, #truncLen=c(150,150),
+              maxN=0, maxEE=c(2,2), truncQ=2, rm.phix=TRUE,
+              compress=TRUE, multithread=TRUE) # On Windows set multithread=FALSE
+head(out)
+
+```
+
