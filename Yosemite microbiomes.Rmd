@@ -19,19 +19,25 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.align='center')
 # load packages
 if (!require("pacman")) install.packages("pacman") # for rapid install if not in library
 
+devtools::install_github("benjjneb/dada2", ref="v1.20") # update to most recent dada2
+
 # use pacman to load CRAN packages missing
-pacman::p_load('knitr', 'tidyverse', 'knitr', 'magrittr', 'effects', 'devtools', 
-               'stringi', 'dplyr', "ggplot2", "gridExtra")
+pacman::p_load('knitr', 'tidyverse', 'knitr', 'magrittr', 'effects', 'devtools',
+               'stringi', 'dplyr', "ggplot2", "gridExtra", "dada2")
+
 
 #upload Bioconductor (now BiocManager or R v. > 3.5.0 ), can specify different version in last line
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install(version = "3.10")
 
+
 #install specific BiocManager packages
 BiocManager::install(c(
-    "Decipher", "phangorn"
+    "Decipher", "phangorn", "phyloseq"
   ), update = TRUE, ask = FALSE)
+
+
 
 ```
 
@@ -48,7 +54,10 @@ fnFs <- sort(list.files(miseq_path, pattern="_R1_001.fastq"))
 fnRs <- sort(list.files(miseq_path, pattern="_R2_001.fastq"))
 
 # Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq
-sampleNames <- sapply(strsplit(fnFs, "_"), `[`, 2)
+sampleNames.p2 <- sapply(strsplit(fnFs, "_"), `[`, 2) # extract sample names
+sampleNames.p3 <- sapply(strsplit(fnFs, "_"), `[`, 3) # extract the run # sample
+sampleNames<-paste(sampleNames.p2,sampleNames.p3) # compile
+sampleNames<-gsub(" ", "_", sample.Names) # remove space and add an underscore
 
 # Specify the full path to the fnFs and fnRs
 fnFs <- file.path(miseq_path, fnFs)
@@ -87,3 +96,38 @@ head(out)
 
 ```
 
+```{r}
+derepFs <- derepFastq(filtFs, verbose=TRUE)
+derepRs <- derepFastq(filtRs, verbose=TRUE)
+# Name the derep-class objects by the sample names
+```
+
+```{r}
+names(derepFs) <- sampleNames
+names(derepRs) <- sampleNames
+```
+
+```{r}
+errF <- learnErrors(filtFs, multithread=TRUE)
+errR <- learnErrors(filtRs, multithread=TRUE)
+```
+
+```{r}
+plotErrors(errF)
+plotErrors(errR)
+```
+
+```{r}
+dadaFs <- dada(derepFs, err=errF, multithread=TRUE)
+dadaRs <- dada(derepRs, err=errR, multithread=TRUE)
+```
+
+```{r}
+dadaFs[[1]]
+```
+
+```{r}
+mergers <- mergePairs(dadaFs, derepFs, dadaRs, derepRs)
+seqtabAll <- makeSequenceTable(mergers[!grepl("Mock", names(mergers))])
+table(nchar(getSequences(seqtabAll)))
+```
