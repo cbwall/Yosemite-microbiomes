@@ -244,7 +244,13 @@ ggsave("figures/inspect.reads.pdf", height=5, width=8)
 
 
 
-################################ 
+################################
+```
+
+
+```{r, decontam}
+# https://www.bioconductor.org/packages/devel/bioc/vignettes/decontam/inst/doc/decontam_intro.html
+
 ################################ Decontam with PCR controls
 
 # remove the mock communities
@@ -408,7 +414,10 @@ richness.test<-cbind(samdf, rich$Observed)
 
 # plot it
 plot_richness(ps1, x="species", measures=c("Observed", "Shannon"))
+```
 
+
+```{r rarify}
 ###### removed PCR controls with low read #
 ps.prune <- prune_samples(sample_sums(ps1)>sort(rowSums(otu_table(ps1)))[5], ps1)
 
@@ -427,7 +436,11 @@ ps.rare2 = rarefy_even_depth(ps.prune, rngseed=1,
 
 sort(rowSums(otu_table(ps.rare2)))
 # rarify to 14520 reads
+```
 
+
+```{r richness tests}
+# https://joey711.github.io/phyloseq/plot_richness-examples.html
 
 ################## using rarified data
 Rar.rich.plot<-plot_richness(ps.rare2, x="species", color="processing", measures=c("Observed", "Shannon")) + theme_bw()
@@ -526,8 +539,34 @@ Qi<-ggplot(Qiagen,
 
 grid.arrange(MM, Qi)
 dev.print(pdf, "figures/16S.comparison.pdf", height=6, width=8)
-dev.off() 
+dev.off()
+```
 
 
+```{r correspondence analysis}
+ps.ca  <- ordinate(ps.rare2, "NMDS", "bray")
+NMDS.taxa <- plot_ordination(ps.rare2, ps.ca, type="taxa", color="Phylum", title="taxa") + geom_point(size=1)
+
+NMDS.location <- plot_ordination(ps.rare2, ps.ca, type="samples", color="location", 
+                                 title="samples - location") + geom_point(size=1)
+
+NMDS.species <- plot_ordination(ps.rare2, ps.ca, type="samples", color="species", 
+                                title="samples - species") + geom_point(size=1)
+
+NMDS.kit <- plot_ordination(ps.rare2, ps.ca, type="samples", color="extraction.kit", 
+                            title="samples - kit") + geom_point(size=1)
+
+NMDS1<-plot_grid(NMDS.location, NMDS.species, NMDS.kit, rel_widths = c(8,8,7), ncol=3)
+NMDS1
+ggsave("figures/NMDS.loc.sp.kit.pdf", height=4, width=12)
+
+
+########
+NMDS.split <- plot_ordination(ps.rare2, ps.ca, type="split", color="Phylum", 
+                             shape="species", label="location",
+                             title="split - species x location and OTU phylum")
+
+NMDS.split
+ggsave("figures/NMDS.split.taxa.pdf", height=7, width=9)
 ```
 
