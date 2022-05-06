@@ -544,6 +544,8 @@ dev.off()
 
 
 ```{r correspondence analysis}
+#https://joey711.github.io/phyloseq/plot_ordination-examples.html
+
 ps.ca  <- ordinate(ps.rare2, "NMDS", "bray")
 NMDS.taxa <- plot_ordination(ps.rare2, ps.ca, type="taxa", color="Phylum", title="taxa") + geom_point(size=1)
 
