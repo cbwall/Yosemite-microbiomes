@@ -1,0 +1,664 @@
+UCSD_metanames,Project,Location,Year,Sampling.date,Lake,Qiagen.ID..original,Sample.type,Organism,Functional.group,Number.of.individuals.or.ml,Extraction.date,FINAL.DNA.tube.ID,Qubit.DNA..ng.ul,Plate.ID,Well.ID,Miseq.Lane,notes1,notes2,well.column,well.letter
+CBW_YoTB_1,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,1,zooplankton,calanoid,copepoda,50,12/5/22,001_21,3.31,1,A01,1,,,A,1
+CBW_YoTB_2,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,2,zooplankton,calanoid,copepoda,50,12/5/22,002_21,0.348,1,A02,1,,,A,2
+CBW_YoTB_3,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Greenstone,3,zooplankton,calanoid,copepoda,42,12/5/22,003_21,1.61,1,A03,1,,,A,3
+CBW_YoTB_4,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,4,zooplankton,calanoid,copepoda,100,12/5/22,004_21,6.03,1,A04,1,,,A,4
+CBW_YoTB_5,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.2.upper,5,zooplankton,calanoid,copepoda,52,12/5/22,005_21,0.483,1,A05,1,,,A,5
+CBW_YoTB_6,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.2.upper,6,zooplankton,holopedium,cladocera,2,12/5/22,006_21,0.086,1,A06,1,,,A,6
+CBW_YoTB_7,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Gaylor.1.lower ,7,zooplankton,calanoid,copepoda,68,12/5/22,007_21,1.76,1,A07,1,,,A,7
+CBW_YoTB_8,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,8,zooplankton,calanoid,copepoda,50,12/5/22,008_21,0.793,1,A08,1,,,A,8
+CBW_YoTB_9,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,9,zooplankton,calanoid,copepoda,50,12/5/22,009_21,0.71,1,A09,1,,,A,9
+CBW_YoTB_10,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,10,zooplankton,calanoid,copepoda,54,12/5/22,010_21,0.288,1,A10,1,,,A,10
+CBW_YoTB_11,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,12,zooplankton,calanoid,copepoda,50,12/5/22,011_21,0.339,1,A11,1,,,A,11
+CBW_YoTB_12,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,13,zooplankton,calanoid,copepoda,19,12/5/22,012_21,0.115,1,A12,1,,,A,12
+CBW_YoTB_13,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Greenstone,14,zooplankton,daphnia,cladocera,39,12/5/22,013_21,0.054,1,B01,1,,,B,1
+CBW_YoTB_14,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,15,zooplankton,calanoid,copepoda,50,12/5/22,014_21,0.416,1,B02,1,,,B,2
+CBW_YoTB_15,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,16,zooplankton,calanoid,copepoda,50,12/5/22,015_21,0.238,1,B03,1,,,B,3
+CBW_YoTB_16,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,18,zooplankton,calanoid,copepoda,50,12/5/22,016_21,0.505,1,B04,1,,,B,4
+CBW_YoTB_17,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,19,zooplankton,calanoid,copepoda,50,12/5/22,017_21,0.536,1,B05,1,,,B,5
+CBW_YoTB_18,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,20,zooplankton,calanoid,copepoda,50,12/5/22,018_21,0.775,1,B06,1,,,B,6
+CBW_YoTB_19,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Steelhead,21,zooplankton,daphnia melanica,cladocera,5,12/5/22,019_21,2.8,1,B07,1,,,B,7
+CBW_YoTB_20,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Secret,24,zooplankton,daphnia melanica,cladocera,11,12/5/22,020_21,1.48,1,B08,1,,,B,8
+CBW_YoTB_21,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Secret,25,zooplankton,daphnia melanica,cladocera,30,12/5/22,021_21,4.8,1,B09,1,,,B,9
+CBW_YoTB_22,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Secret,26,zooplankton,daphnia melanica,cladocera,20,12/5/22,022_21,1.72,1,B10,1,,,B,10
+CBW_YoTB_23,Zoop Microbiome,Sierra Nevada,2021,7/7/21,Eastern Brook,27,zooplankton,daphnia,cladocera,34,12/5/22,023_21,2.11,1,B11,1,,,B,11
+CBW_YoTB_24,Zoop Microbiome,Sierra Nevada,2021,NA,negative.control,B2,negative.control,negative.control,ext.blank,NA,12/5/22,024_21,too low,1,B12,1,<< negative.control,,B,12
+CBW_YoTB_25,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.2.upper,11,zooplankton,calanoid,copepoda,50,6/15/22,025_21,too low,1,C01,1,,,C,1
+CBW_YoTB_26,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,17,zooplankton,calanoid,copepoda,50,6/15/22,026_21,0.218,1,C02,1,,,C,2
+CBW_YoTB_27,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Steelhead,22,zooplankton,daphnia,cladocera,30,6/15/22,027_21,2.93,1,C03,1,,,C,3
+CBW_YoTB_28,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Secret,23,zooplankton,cyclopoid,copepoda,37,6/15/22,028_21,30.2,1,C04,1,,,C,4
+CBW_YoTB_29,Zoop Microbiome,Sierra Nevada,2021,7/7/21,Eastern Brook,28,zooplankton,daphnia,cladocera,30,6/15/22,029_21,0.393,1,C05,1,,,C,5
+CBW_YoTB_30,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.1.lower,32,zooplankton,daphnia,cladocera,30,6/15/22,030_21,0.296,1,C06,1,,,C,6
+CBW_YoTB_31,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,37,zooplankton,daphnia,cladocera,30,6/15/22,031_21,1.35,1,C07,1,,,C,7
+CBW_YoTB_32,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,39,zooplankton,bosmina,cladocera,50,6/15/22,032_21,0.9,1,C08,1,,,C,8
+CBW_YoTB_33,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,40,zooplankton,bosmina,cladocera,50,6/15/22,033_21,0.726,1,C09,1,,,C,9
+CBW_YoTB_34,Zoop Microbiome,Sierra Nevada,2021,7/9/21,Gaylor.2.upper,48,zooplankton,ceriodaphnia,cladocera,31,6/15/22,034_21,2,1,C10,1,,,C,10
+CBW_YoTB_35,Zoop Microbiome,Sierra Nevada,2021,7/9/21,Gaylor.2.upper,51,zooplankton,ceriodaphnia,cladocera,5,6/15/22,035_21,0.127,1,C11,1,,,C,11
+CBW_YoTB_36,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeTwo,53,zooplankton,White worm,TBD,19,6/15/22,036_21,3.26,1,C12,1,,,C,12
+CBW_YoTB_37,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.1.lower,55,zooplankton,bosmina,cladocera,4,6/15/22,037_21,too low,1,D01,1,,,D,1
+CBW_YoTB_38,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeThree,57,zooplankton,calanoid,copepoda,54,6/15/22,038_21,22.1,1,D02,1,,,D,2
+CBW_YoTB_39,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,65,zooplankton,cyclopoid,copepoda,17,6/15/22,039_21,1.37,1,D03,1,,,D,3
+CBW_YoTB_40,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,66,zooplankton,holopedium,cladocera,17,6/15/22,040_21,0.703,1,D04,1,,,D,4
+CBW_YoTB_41,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,68,zooplankton,polyphemus,cladocera,11,6/15/22,041_21,too low,1,D05,1,,,D,5
+CBW_YoTB_42,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise3,72,zooplankton,holopedium ,cladocera,17,6/15/22,042_21,1.09,1,D06,1,,,D,6
+CBW_YoTB_43,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,80,zooplankton,holopedium,cladocera,2,6/15/22,043_21,0.422,1,D07,1,,,D,7
+CBW_YoTB_44,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,83,zooplankton,calanoid large,copepoda,16,6/15/22,044_21,1.64,1,D08,1,,,D,8
+CBW_YoTB_45,Zoop Microbiome,Sierra Nevada,2021,7/15/21,Gardisky,88,zooplankton,calanoid,copepoda,50,6/15/22,045_21,30.8,1,D09,1,,,D,9
+CBW_YoTB_46,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,92,zooplankton,calanoid large,copepoda,15,6/15/22,046_21,1.99,1,D10,1,,,D,10
+CBW_YoTB_47,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.1.lower,98,zooplankton,daphnia melanica,cladocera,30,6/15/22,047_21,2.05,1,D11,1,,,D,11
+CBW_YoTB_48,Zoop Microbiome,Sierra Nevada,2021,NA,negative.control,B1,negative.control,negative.control,ext.blank,NA,6/15/22,048_21,too low,1,D12,1,<< negative.control,,D,12
+CBW_YoTB_49,Zoop Microbiome,Sierra Nevada,2021,7/7/21,Eastern Brook,29,zooplankton,daphnia,cladocera,27,12/6/22,049_21,3.38,1,E01,1,,,E,1
+CBW_YoTB_50,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Serene,30,zooplankton,daphnia,cladocera,30,12/6/22,050_21,3.36,1,E02,1,,,E,2
+CBW_YoTB_51,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Serene,31,zooplankton,daphnia,cladocera,32,12/6/22,051_21,4.96,1,E03,1,,,E,3
+CBW_YoTB_52,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,33,zooplankton,daphnia,cladocera,30,12/6/22,052_21,2.34,1,E04,1,,,E,4
+CBW_YoTB_53,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,34,zooplankton,daphnia,cladocera,30,12/6/22,053_21,3.82,1,E05,1,,,E,5
+CBW_YoTB_54,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,35,zooplankton,daphnia,cladocera,30,12/6/22,054_21,5.28,1,E06,1,,,E,6
+CBW_YoTB_55,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,36,zooplankton,daphnia,cladocera,30,12/6/22,055_21,4.52,1,E07,1,,,E,7
+CBW_YoTB_56,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,38,zooplankton,daphnia,cladocera,100,12/6/22,056_21,18.1,1,E08,1,,,E,8
+CBW_YoTB_57,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Virginia,41,zooplankton,daphnia,cladocera,32,12/6/22,057_21,3.7,1,E09,1,,,E,9
+CBW_YoTB_58,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Virginia,42,zooplankton,daphnia,cladocera,30,12/6/22,058_21,3.98,1,E10,1,,,E,10
+CBW_YoTB_59,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Virginia,43,zooplankton,daphnia,cladocera,30,12/6/22,059_21,2.58,1,E11,1,,,E,11
+CBW_YoTB_60,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Virginia,44,zooplankton,daphnia,cladocera,30,12/6/22,060_21,3.38,1,E12,1,,,E,12
+CBW_YoTB_61,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Virginia,45,zooplankton,daphnia,cladocera,100,12/6/22,061_21,15.4,1,F01,1,,,F,1
+CBW_YoTB_62,Zoop Microbiome,Sierra Nevada,2021,7/9/21,Gaylor.2.upper,47,zooplankton,daphnia,cladocera,30,12/6/22,063_21,2.68,1,F03,1,,,F,3
+CBW_YoTB_63,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.1.lower,49,zooplankton,daphnia,cladocera,30,12/6/22,064_21,9.12,1,F04,1,,,F,4
+CBW_YoTB_64,Zoop Microbiome,Sierra Nevada,2021,7/9/21,Gaylor.2.upper,50,zooplankton,daphnia,cladocera,6,12/6/22,065_21,0.232,1,F05,1,,,F,5
+CBW_YoTB_65,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeTwo,52,zooplankton,calanoid,copepoda,32,12/6/22,066_21,0.83,1,F06,1,,,F,6
+CBW_YoTB_66,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.1.lower,54,zooplankton,ceriodaphnia,cladocera,1,12/6/22,067_21,too low,1,F07,1,,,F,7
+CBW_YoTB_67,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.1.lower,56,zooplankton,daphnia,cladocera,36,12/6/22,068_21,13.6,1,F08,1,,,F,8
+CBW_YoTB_68,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeOne,58,zooplankton,calanoid,copepoda,50,12/6/22,069_21,36.4,1,F09,1,,,F,9
+CBW_YoTB_69,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeOne,59,zooplankton,calanoid,copepoda,42,12/6/22,070_21,22.4,1,F10,1,,,F,10
+CBW_YoTB_70,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,60,zooplankton,daphnia,cladocera,30,12/6/22,071_21,5.32,1,F11,1,,,F,11
+CBW_YoTB_71,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,61,zooplankton,daphnia,cladocera,30,12/6/22,072_21,3.12,1,F12,1,,,F,12
+CBW_YoTB_72,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,62,zooplankton,daphnia,cladocera,30,12/7/22,073_21,0.11,1,G01,1,,,G,1
+CBW_YoTB_73,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,63,zooplankton,daphnia,cladocera,30,12/7/22,074_21,9.3,1,G02,1,,,G,2
+CBW_YoTB_74,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,64,zooplankton,daphnia,cladocera,36,12/7/22,075_21,5.28,1,G03,1,,,G,3
+CBW_YoTB_75,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,67,zooplankton,calanoid,copepoda,23,12/7/22,076_21,12.9,1,G04,1,,,G,4
+CBW_YoTB_76,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise3,69,zooplankton,daphnia,cladocera,30,12/7/22,077_21,3.2,1,G05,1,,,G,5
+CBW_YoTB_77,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise3,70,zooplankton,daphnia,cladocera,16,12/7/22,078_21,2.7,1,G06,1,,,G,6
+CBW_YoTB_78,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise3,71,zooplankton,calanoid,copepoda,50,12/7/22,079_21,35,1,G07,1,,,G,7
+CBW_YoTB_79,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise3,73,zooplankton,calanoid ,copepoda,12,12/7/22,080_21,5.64,1,G08,1,,,G,8
+CBW_YoTB_80,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise1,76,zooplankton,calanoid,copepoda,53,12/7/22,081_21,47.4,1,G09,1,,,G,9
+CBW_YoTB_81,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise1,77,zooplankton,calanoid,copepoda,50,12/7/22,082_21,45.8,1,G10,1,,,G,10
+CBW_YoTB_82,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise1,78,zooplankton,daphnia,cladocera,28,12/7/22,083_21,3.56,1,G11,1,,,G,11
+CBW_YoTB_83,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise1,79,zooplankton,daphnia,cladocera,30,12/7/22,084_21,3.32,1,G12,1,,,G,12
+CBW_YoTB_84,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,81,zooplankton,daphnia,cladocera,21,12/7/22,085_21,4.24,1,H01,1,,,H,1
+CBW_YoTB_85,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,82,zooplankton,calanoid,copepoda,23,12/7/22,086_21,11,1,H02,1,,,H,2
+CBW_YoTB_86,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,84,zooplankton,calanoid large,copepoda,15,12/7/22,087_21,9.3,1,H03,1,,,H,3
+CBW_YoTB_87,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,85,zooplankton,calanoid large,copepoda,15,12/7/22,088_21,4.26,1,H04,1,,,H,4
+CBW_YoTB_88,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,86,zooplankton,calanoid large,copepoda,15,12/7/22,089_21,20.8,1,H05,1,,,H,5
+CBW_YoTB_89,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,87,zooplankton,calanoid large,copepoda,15,12/7/22,090_21,7.98,1,H06,1,,,H,6
+CBW_YoTB_90,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,90,zooplankton,daphnia,cladocera,30,12/7/22,091_21,7.12,1,H07,1,,,H,7
+CBW_YoTB_91,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,91,zooplankton,calanoid,copepoda,50,12/7/22,092_21,23,1,H08,1,,,H,8
+CBW_YoTB_92,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,93,zooplankton,calanoid large,copepoda,18,12/7/22,093_21,23,1,H09,1,,,H,9
+CBW_YoTB_93,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,94,zooplankton,calanoid,copepoda,25,12/7/22,094_21,12.3,1,H10,1,,,H,10
+CBW_YoTB_94,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,95,zooplankton,holopedium,cladocera,7,12/7/22,095_21,1.75,1,H11,1,,,H,11
+CBW_YoTB_95,Zoop Microbiome,Sierra Nevada,2021,NA,negative.control,B3,negative.control,negative.control,ext.blank,NA,12/7/22,096_21,too low,1,H12,1,<< negative.control,,H,12
+CBW_YoTB_96,Zoop Microbiome,Sierra Nevada,2021,7/15/21,Gardisky,74,zooplankton,daphnia,cladocera,40,12/8/22,097_21,7.32,2,A01,2,,,A,1
+CBW_YoTB_97,Zoop Microbiome,Sierra Nevada,2021,7/15/21,Gardisky,75,zooplankton,daphnia,cladocera,30,12/8/22,098_22,6.2,2,A02,2,,,A,2
+CBW_YoTB_98,Zoop Microbiome,Sierra Nevada,2021,7/15/21,Gardisky,89,zooplankton,calanoid,copepoda,19,12/8/22,099_21,30.2,2,A03,2,,,A,3
+CBW_YoTB_99,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,96,zooplankton,daphnia,cladocera,12,12/8/22,100_21,4.44,2,A04,2,,,A,4
+CBW_YoTB_100,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.1.lower,97,zooplankton,daphnia melanica,cladocera,30,12/8/22,101_21,6.82,2,A05,2,,,A,5
+CBW_YoTB_101,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.1.lower,99,zooplankton,daphnia melanica,cladocera,34,12/8/22,102_21,0.476,2,A06,2,,,A,6
+CBW_YoTB_102,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.1.lower,100,zooplankton,calanoid,copepoda,50,12/8/22,103_21,26.4,2,A07,2,,,A,7
+CBW_YoTB_103,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.1.lower,101,zooplankton,calanoid,copepoda,47,12/8/22,104_21,21,2,A08,2,,,A,8
+CBW_YoTB_104,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,102,zooplankton,daphnia,cladocera,30,12/8/22,105_21,4.5,2,A09,2,,,A,9
+CBW_YoTB_105,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,103,zooplankton,daphnia,cladocera,30,12/8/22,106_21,5.86,2,A10,2,,,A,10
+CBW_YoTB_106,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,104,zooplankton,daphnia,cladocera,20,12/8/22,107_21,4.74,2,A11,2,,,A,11
+CBW_YoTB_107,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,105,zooplankton,holopedium,cladocera,22,12/8/22,108_21,4.54,2,A12,2,,,A,12
+CBW_YoTB_108,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,106,zooplankton,calanoid,copepoda,49,12/8/22,109_21,28,2,B01,2,,,B,1
+CBW_YoTB_109,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,107,zooplankton,cyclopoid,copepoda,50,12/8/22,110_21,18.5,2,B02,2,,,B,2
+CBW_YoTB_110,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,108,zooplankton,cyclopoid,copepoda,50,12/8/22,111_21,22,2,B03,2,,,B,3
+CBW_YoTB_111,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,109,zooplankton,asplanchna,rotifer,59,12/8/22,112_21,0.678,2,B04,2,,,B,4
+CBW_YoTB_112,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,110,zooplankton,daphnia,cladocera,30,12/8/22,113_21,3.86,2,B05,2,,,B,5
+CBW_YoTB_113,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,111,zooplankton,daphnia,cladocera,30,12/8/22,114_21,2.8,2,B06,2,,,B,6
+CBW_YoTB_114,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,112,zooplankton,daphnia,cladocera,30,12/8/22,115_21,2.22,2,B07,2,,,B,7
+CBW_YoTB_115,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,113,zooplankton,daphnia,cladocera,30,12/8/22,116_21,2.88,2,B08,2,,,B,8
+CBW_YoTB_116,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,114,zooplankton,daphnia,cladocera,30,12/8/22,117_21,2.1,2,B09,2,,,B,9
+CBW_YoTB_117,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,116,zooplankton,daphnia,cladocera,51,12/8/22,118_21,0.458,2,B10,2,,,B,10
+CBW_YoTB_118,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,117,zooplankton,daphnia,cladocera,30,12/8/22,119_21,3.7,2,B11,2,,,B,11
+CBW_YoTB_119,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,118,zooplankton,holopedium,cladocera,10,12/8/22,120_21,1.64,2,B12,2,,,B,12
+CBW_YoTB_120,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,119,zooplankton,holopedium,cladocera,10,12/8/22,121_21,1.61,2,C01,2,,,C,1
+CBW_YoTB_121,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,120,zooplankton,holopedium,cladocera,10,12/8/22,122_21,1.16,2,C02,2,,,C,2
+CBW_YoTB_122,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,121,zooplankton,holopedium,cladocera,12,12/8/22,123_21,1.24,2,C03,2,,,C,3
+CBW_YoTB_123,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,122,zooplankton,daphnia,cladocera,30,12/8/22,124_21,2.08,2,C04,2,,,C,4
+CBW_YoTB_124,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,123,zooplankton,daphnia,cladocera,30,12/8/22,125_21,2.5,2,C05,2,,,C,5
+CBW_YoTB_125,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,124,zooplankton,daphnia,cladocera,37,12/8/22,126_21,2.46,2,C06,2,,,C,6
+CBW_YoTB_126,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,125,zooplankton,ceriodaphnia,cladocera,30,12/8/22,127_21,1.72,2,C07,2,,,C,7
+CBW_YoTB_127,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,126,zooplankton,daphnia,cladocera,30,12/8/22,128_21,2.08,2,C08,2,,,C,8
+CBW_YoTB_128,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,127,zooplankton,holopedium,cladocera,38,12/8/22,129_21,3.02,2,C09,2,,,C,9
+CBW_YoTB_129,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,128,zooplankton,ceriodaphnia,cladocera,30,12/8/22,130_21,1.12,2,C10,2,,,C,10
+CBW_YoTB_130,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,129,zooplankton,ceriodaphnia,cladocera,14,12/8/22,131_21,0.552,2,C11,2,,,C,11
+CBW_YoTB_131,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,130,zooplankton,daphnia,cladocera,17,12/8/22,132_21,0.94,2,C12,2,,,C,12
+CBW_YoTB_132,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,131,zooplankton,ceriodaphnia,cladocera,30,12/8/22,133_21,1.17,2,D01,2,,,D,1
+CBW_YoTB_133,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,132,zooplankton,ceriodaphnia,cladocera,30,12/8/22,134_21,1.02,2,D02,2,,,D,2
+CBW_YoTB_134,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,133,zooplankton,ceriodaphnia,cladocera,30,12/8/22,135_21,0.824,2,D03,2,,,D,3
+CBW_YoTB_135,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,134,zooplankton,ceriodaphnia,cladocera,30,12/8/22,136_21,1.1,2,D04,2,,,D,4
+CBW_YoTB_136,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Greenstone,142,zooplankton,daphnia,cladocera,24,12/8/22,137_21,2.26,2,D05,2,,,D,5
+CBW_YoTB_137,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.2.upper,143,zooplankton,ceriodaphnia,cladocera,26,12/8/22,138_21,too low,2,D06,2,,,D,6
+CBW_YoTB_138,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,137,zooplankton,holopedium,cladocera,10,12/8/22,139_21,0.83,2,D07,2,,,D,7
+CBW_YoTB_139,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,138,zooplankton,holopedium,cladocera,10,12/8/22,140_21,0.776,2,D08,2,,,D,8
+CBW_YoTB_140,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,139,zooplankton,holopedium,cladocera,7,12/8/22,141_21,0.186,2,D09,2,,,D,9
+CBW_YoTB_141,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Greenstone,140,zooplankton,daphnia,cladocera,30,12/8/22,142_21,3,2,D10,2,,,D,10
+CBW_YoTB_142,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Greenstone,141,zooplankton,bosmina,cladocera,50,12/8/22,143_21,0.13,2,D11,2,,,D,11
+CBW_YoTB_143,Zoop Microbiome,Sierra Nevada,2021,NA,negative.control,B4,negative.control,negative.control,ext.blank,NA,12/8/22,144_21,too low,2,D12,2,<< negative.control,,D,12
+CBW_YoTB_144,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Gaylor.1.lower ,144,zooplankton,ceriodaphnia,cladocera,50,12/9/22,145_21,0.248,2,E01,2,,,E,1
+CBW_YoTB_145,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Gaylor.1.lower ,145,zooplankton,ceriodaphnia,cladocera,50,12/9/22,146_21,0.214,2,E02,2,,,E,2
+CBW_YoTB_146,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Gaylor.1.lower ,146,zooplankton,ceriodaphnia,cladocera,21,12/9/22,147_21,too low,2,E03,2,,,E,3
+CBW_YoTB_147,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,147,zooplankton,daphnia,cladocera,30,12/9/22,148_21,2.72,2,E04,2,,,E,4
+CBW_YoTB_148,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,148,zooplankton,daphnia,cladocera,30,12/9/22,149_21,4.08,2,E05,2,,,E,5
+CBW_YoTB_149,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,149,zooplankton,daphnia,cladocera,30,12/9/22,150_21,4.08,2,E06,2,,,E,6
+CBW_YoTB_150,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,150,zooplankton,daphnia,cladocera,30,12/9/22,151_21,3.12,2,E07,2,,,E,7
+CBW_YoTB_151,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict,151,zooplankton,daphnia,cladocera,30,12/9/22,152_21,3.5,2,E08,2,,,E,8
+CBW_YoTB_152,Zoop Microbiome,Sierra Nevada,2021,7/15/21,Gardisky,2a,zooplankton,daphnia,cladocera,25,test data 2021,153_21,1.48,2,E09,2,,,E,9
+CBW_YoTB_153,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,61_22,zooplankton,daphnia,cladocera,30,12/9/22,154_22,10.8,2,E10,2,,,E,10
+CBW_YoTB_154,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,64_22,zooplankton,daphnia,cladocera,30,12/9/22,155_22,4.82,2,E11,2,,,E,11
+CBW_YoTB_155,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,62_22,zooplankton,daphnia,cladocera,30,12/9/22,156_22,4.5,2,E12,2,,,E,12
+CBW_YoTB_156,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,63_22,zooplankton,daphnia,cladocera,30,12/9/22,157_22,7.3,2,F01,2,,,F,1
+CBW_YoTB_157,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,65_22,zooplankton,daphnia,cladocera,30,12/9/22,158_22,7.4,2,F02,2,,,F,2
+CBW_YoTB_158,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,66_22,zooplankton,daphnia,cladocera,101,12/9/22,159_22,7.78,2,F03,2,,,F,3
+CBW_YoTB_159,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,67_22,zooplankton,calanoid,copepoda,50,12/9/22,160_22,16.6,2,F04,2,,,F,4
+CBW_YoTB_160,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,68_22,zooplankton,calanoid,copepoda,50,12/9/22,161_22,28.8,2,F05,2,,,F,5
+CBW_YoTB_161,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,69_22,zooplankton,calanoid,copepoda,50,12/9/22,162_22,18.9,2,F06,2,,,F,6
+CBW_YoTB_162,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,70_22,zooplankton,holopedium,cladocera,10,12/9/22,163_22,3.52,2,F07,2,,,F,7
+CBW_YoTB_163,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,71_22,zooplankton,holopedium,cladocera,10,12/9/22,164_22,2.64,2,F08,2,,,F,8
+CBW_YoTB_164,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,72_22,zooplankton,holopedium,cladocera,10,12/9/22,165_22,2.18,2,F09,2,,,F,9
+CBW_YoTB_165,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,73_22,zooplankton,holopedium,cladocera,10,12/9/22,166_22,2.96,2,F10,2,,,F,10
+CBW_YoTB_166,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,74_22,zooplankton,holopedium,cladocera,10,12/9/22,167_22,3.28,2,F11,2,,,F,11
+CBW_YoTB_167,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,75_22,zooplankton,holopedium,cladocera,30,12/9/22,168_22,7.6,2,F12,2,,,F,12
+CBW_YoTB_168,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,B5,negative.control,negative.control,ext.blank,NA,12/9/22,169_22,too low,2,G01,2,<< negative.control,,G,1
+CBW_YoTB_169,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,85_22,zooplankton,daphnia,cladocera,30,2/24/23,170_22,4.08,2,G02,2,,,G,2
+CBW_YoTB_170,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,105_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,171_22,2.44,2,G03,2,,,G,3
+CBW_YoTB_171,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,95_22,zooplankton,cyclopoid,copepoda,50,2/24/23,172_22,26,2,G04,2,,,G,4
+CBW_YoTB_172,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,135_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,173_22,1.64,2,G05,2,,,G,5
+CBW_YoTB_173,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,96_22,zooplankton,cyclopoid,copepoda,50,2/24/23,174_22,60.6,2,G06,2,,,G,6
+CBW_YoTB_174,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,97_22,zooplankton,cyclopoid,copepoda,30,2/24/23,175_22,19.3,2,G07,2,,,G,7
+CBW_YoTB_175,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,138_22,zooplankton,calanoid,copepoda,50,2/24/23,176_22,55.6,2,G08,2,,,G,8
+CBW_YoTB_176,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,119_22,zooplankton,polyphemus,cladocera,10,2/24/23,177_22,1.07,2,G09,2,,,G,9
+CBW_YoTB_177,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,125_22,zooplankton,calanoid,copepoda,30,2/24/23,178_22,110,2,G10,2,,,G,10
+CBW_YoTB_178,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,87_22,zooplankton,calanoid,copepoda,50,2/24/23,179_22,44,2,G11,2,,,G,11
+CBW_YoTB_179,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,140_22,zooplankton,calanoid,copepoda,50,2/24/23,180_22,38.2,2,G12,2,,,G,12
+CBW_YoTB_180,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,150_22,zooplankton,daphnia,cladocera,30,2/24/23,181_22,0.57,2,H01,2,,,H,1
+CBW_YoTB_181,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,149_22,zooplankton,daphnia,cladocera,30,2/24/23,182_22,6,2,H02,2,,,H,2
+CBW_YoTB_182,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,108_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,183_22,4.8,2,H03,2,,,H,3
+CBW_YoTB_183,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,130_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,184_22,4.06,2,H04,2,,,H,4
+CBW_YoTB_184,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,100_22,zooplankton,bosmina,cladocera,50,2/24/23,185_22,1.26,2,H05,2,,,H,5
+CBW_YoTB_185,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,120_22,zooplankton,ceriodaphnia,cladocera,100,2/24/23,186_22,8.82,2,H06,2,,,H,6
+CBW_YoTB_186,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,110_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,187_22,2.56,2,H07,2,,,H,7
+CBW_YoTB_187,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,90_22,zooplankton,calanoid,copepoda,50,2/24/23,188_22,44.2,2,H08,2,,,H,8
+CBW_YoTB_188,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,80_22,zooplankton,bosmina,cladocera,50,2/24/23,189_22,0.9,2,H09,2,,,H,9
+CBW_YoTB_189,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,129_22,zooplankton,calanoid,copepoda,100,2/24/23,190_22,65.6,2,H10,2,,,H,10
+CBW_YoTB_190,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,148_22,zooplankton,daphnia,cladocera,16,2/24/23,191_22,2.52,2,H11,2,,,H,11
+CBW_YoTB_191,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,107_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,192_22,2.5,2,H12,2,,,H,12
+CBW_YoTB_192,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,B6,negative.control,negative.control,ext.blank,NA,2/24/23,193_22,too low,3,A01,1,<< negative.control,,A,1
+CBW_YoTB_193,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,139_22,zooplankton,calanoid,copepoda,50,2/24/23,194_22,20.2,3,A02,1,,,A,2
+CBW_YoTB_194,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,109_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,195_22,1.04,3,A03,1,,,A,3
+CBW_YoTB_195,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,99_22,zooplankton,bosmina,cladocera,50,2/24/23,196_22,1.13,3,A04,1,,,A,4
+CBW_YoTB_196,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,89_22,zooplankton,calanoid,copepoda,50,2/24/23,197_22,30.4,3,A05,1,,,A,5
+CBW_YoTB_197,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,79_22,zooplankton,bosmina,cladocera,50,2/24/23,198_22,1.46,3,A06,1,,,A,6
+CBW_YoTB_198,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,128_22,zooplankton,calanoid,copepoda,30,2/24/23,199_22,43,3,A07,1,,,A,7
+CBW_YoTB_199,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,98_22,zooplankton,daphnia,cladocera,100,2/24/23,200_22,8.76,3,A08,1,,,A,8
+CBW_YoTB_200,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,118_22,zooplankton,daphnia,cladocera,22,2/24/23,201_22,2.54,3,A09,1,,,A,9
+CBW_YoTB_201,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,88_22,zooplankton,calanoid,copepoda,50,2/24/23,202_22,30.4,3,A10,1,,,A,10
+CBW_YoTB_202,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,78_22,zooplankton,bosmina,cladocera,50,2/24/23,203_22,1.18,3,A11,1,,,A,11
+CBW_YoTB_203,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,127_22,zooplankton,calanoid,copepoda,30,2/24/23,204_22,55.8,3,A12,1,,,A,12
+CBW_YoTB_204,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,117_22,zooplankton,daphnia,cladocera,30,2/24/23,205_22,3.46,3,B01,1,,,B,1
+CBW_YoTB_205,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,147_22,zooplankton,daphnia,cladocera,30,2/24/23,206_22,1.16,3,B02,1,,,B,2
+CBW_YoTB_206,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,137_22,zooplankton,bosmina,cladocera,50,2/24/23,207_22,0.234,3,B03,1,,,B,3
+CBW_YoTB_207,Zoop Microbiome,Sierra Nevada,2022,7/2/22,Helen,77_22,zooplankton,daphnia,cladocera,18,2/24/23,208_22,1.46,3,B04,1,,,B,4
+CBW_YoTB_208,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,126_22,zooplankton,calanoid,copepoda,30,2/24/23,209_22,40.6,3,B05,1,,,B,5
+CBW_YoTB_209,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,116_22,zooplankton,calanoid,copepoda,100,2/24/23,210_22,23.4,3,B06,1,,,B,6
+CBW_YoTB_210,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,146_22,zooplankton,daphnia,cladocera,30,2/24/23,211_22,0.948,3,B07,1,,,B,7
+CBW_YoTB_211,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,115_22,zooplankton,calanoid,copepoda,50,2/24/23,212_22,16.7,3,B08,1,,,B,8
+CBW_YoTB_212,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,145_22,zooplankton,polyphemus,cladocera,8,2/24/23,213_22,0.146,3,B09,1,,,B,9
+CBW_YoTB_213,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,136_22,zooplankton,ceriodaphnia,cladocera,100,2/24/23,214_22,3.66,3,B10,1,,,B,10
+CBW_YoTB_214,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,86_22,zooplankton,daphnia,cladocera,30,2/24/23,215_22,4.88,3,B11,1,,,B,11
+CBW_YoTB_215,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May,76_22,zooplankton,polyphemus,cladocera,10,2/24/23,216_22,0.104,3,B12,1,,,B,12
+CBW_YoTB_216,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,106_22,zooplankton,ceriodaphnia,cladocera,50,2/24/23,217_22,3.04,3,C01,1,,,C,1
+CBW_YoTB_217,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,103_22,zooplankton,bosmina,cladocera,50,2/27/23,218_22,0.762,3,C02,1,,,C,2
+CBW_YoTB_218,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,B7,negative.control,negative.control,ext.blank,NA,2/27/23,219_22,too low,3,C03,1,<< negative.control,,C,3
+CBW_YoTB_219,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,93_22,zooplankton,calanoid,copepoda,99,2/27/23,220_22,99,3,C04,1,,,C,4
+CBW_YoTB_220,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,101_22,zooplankton,bosmina,cladocera,50,2/27/23,221_22,0.206,3,C05,1,,,C,5
+CBW_YoTB_221,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,102_22,zooplankton,bosmina,cladocera,50,2/27/23,222_22,0.188,3,C06,1,,,C,6
+CBW_YoTB_222,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,144_22,zooplankton,calanoid,copepoda,100,2/27/23,223_22,120,3,C07,1,,,C,7
+CBW_YoTB_223,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,84_22,zooplankton,daphnia,cladocera,30,2/27/23,224_22,4.86,3,C08,1,,,C,8
+CBW_YoTB_224,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,83_22,zooplankton,daphnia,cladocera,30,2/27/23,225_22,6.66,3,C09,1,,,C,9
+CBW_YoTB_225,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,91_22,zooplankton,cyclopoid,copepoda,50,2/27/23,226_22,12.2,3,C10,1,,,C,10
+CBW_YoTB_226,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,92_22,zooplankton,calanoid,copepoda,50,2/27/23,227_22,32.4,3,C11,1,,,C,11
+CBW_YoTB_227,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,82_22,zooplankton,daphnia,cladocera,30,2/27/23,228_22,6.88,3,C12,1,,,C,12
+CBW_YoTB_228,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,112_22,zooplankton,calanoid,copepoda,50,2/27/23,229_22,30.2,3,D01,1,,,D,1
+CBW_YoTB_229,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,143_22,zooplankton,calanoid,copepoda,100,2/27/23,230_22,48,3,D02,1,,,D,2
+CBW_YoTB_230,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,113_22,zooplankton,calanoid,copepoda,50,2/27/23,231_22,21.2,3,D03,1,,,D,3
+CBW_YoTB_231,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,132_22,zooplankton,ceriodaphnia,cladocera,50,2/27/23,232_22,2.22,3,D04,1,,,D,4
+CBW_YoTB_232,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,131_22,zooplankton,ceriodaphnia,cladocera,50,2/27/23,233_22,2.32,3,D05,1,,,D,5
+CBW_YoTB_233,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,133_22,zooplankton,ceriodaphnia,cladocera,50,2/27/23,234_22,1.12,3,D06,1,,,D,6
+CBW_YoTB_234,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,81_22,zooplankton,bosmina,cladocera,50,2/27/23,235_22,0.652,3,D07,1,,,D,7
+CBW_YoTB_235,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,121_22,zooplankton,calanoid,copepoda,50,2/27/23,236_22,27.2,3,D08,1,,,D,8
+CBW_YoTB_236,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,122_22,zooplankton,calanoid,copepoda,50,2/27/23,237_22,46.8,3,D09,1,,,D,9
+CBW_YoTB_237,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,141_22,zooplankton,calanoid,copepoda,50,2/27/23,238_22,30.2,3,D10,1,,,D,10
+CBW_YoTB_238,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,123_22,zooplankton,calanoid,copepoda,50,2/27/23,239_22,64,3,D11,1,,,D,11
+CBW_YoTB_239,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,142_22,zooplankton,calanoid,copepoda,50,2/27/23,240_22,26.2,3,D12,1,,,D,12
+CBW_YoTB_240,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,111_22,zooplankton,calanoid,copepoda,50,2/27/23,241_22,33.2,3,E01,1,,,E,1
+CBW_YoTB_241,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,183_22,zooplankton,calanoid,copepoda,50,3/1/23,242_22,16,3,E02,1,,,E,2
+CBW_YoTB_242,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,134_22,zooplankton,ceriodaphnia,cladocera,50,3/1/23,243_22,1.57,3,E03,1,,,E,3
+CBW_YoTB_243,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,159_22,zooplankton,holopedium,cladocera,9,3/1/23,244_22,0.46,3,E04,1,,,E,4
+CBW_YoTB_244,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,223_22,zooplankton,holopedium,cladocera,10,3/1/23,245_22,1.36,3,E05,1,,,E,5
+CBW_YoTB_245,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,215_22,zooplankton,daphnia,cladocera,30,3/1/23,246_22,1.12,3,E06,1,,,E,6
+CBW_YoTB_246,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,104_22,zooplankton,ceriodaphnia,cladocera,43,3/1/23,247_22,1.85,3,E07,1,,,E,7
+CBW_YoTB_247,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,214_22,zooplankton,daphnia,cladocera,30,3/1/23,248_22,1.1,3,E08,1,,,E,8
+CBW_YoTB_248,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky,94_22,zooplankton,cyclopoid,copepoda,50,3/1/23,249_22,11.2,3,E09,1,,,E,9
+CBW_YoTB_249,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,167_22,zooplankton,calanoid,copepoda,50,3/1/23,250_22,39.8,3,E10,1,,,E,10
+CBW_YoTB_250,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,175_22,zooplankton,daphnia,cladocera,100,3/1/23,251_22,11.2,3,E11,1,,,E,11
+CBW_YoTB_251,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,114_22,zooplankton,calanoid,copepoda,50,3/1/23,252_22,28,3,E12,1,,,E,12
+CBW_YoTB_252,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,190_22,zooplankton,daphnia,cladocera,30,3/1/23,253_22,1.59,3,F01,1,,,F,1
+CBW_YoTB_253,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,198_22,zooplankton,calanoid blue,copepoda,50,3/1/23,254_22,27.4,3,F02,1,,,F,2
+CBW_YoTB_254,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,176_22,zooplankton,calanoid,copepoda,50,3/1/23,255_22,10.4,3,F03,1,,,F,3
+CBW_YoTB_255,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,207_22,zooplankton,calanoid,copepoda,50,3/1/23,256_22,18.2,3,F04,1,,,F,4
+CBW_YoTB_256,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,206_22,zooplankton,calanoid,copepoda,50,3/1/23,257_22,15.5,3,F05,1,,,F,5
+CBW_YoTB_257,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,191_22,zooplankton,daphnia,cladocera,30,3/1/23,258_22,2.36,3,F06,1,,,F,6
+CBW_YoTB_258,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,199_22,zooplankton,calanoid blue,copepoda,50,3/1/23,259_22,8.04,3,F07,1,,,F,7
+CBW_YoTB_259,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,166_22,zooplankton,calanoid,copepoda,50,3/1/23,260_22,34.4,3,F08,1,,,F,8
+CBW_YoTB_260,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,174_22,zooplankton,daphnia,cladocera,30,3/1/23,261_22,2,3,F09,1,,,F,9
+CBW_YoTB_261,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,124_22,zooplankton,calanoid,copepoda,30,3/1/23,262_22,74.8,3,F10,1,,,F,10
+CBW_YoTB_262,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,184_22,zooplankton,calanoid,copepoda,50,3/1/23,263_22,37.6,3,F11,1,,,F,11
+CBW_YoTB_263,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,182_22,zooplankton,calanoid,copepoda,50,3/1/23,264_22,34.8,3,F12,1,,,F,12
+CBW_YoTB_264,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,168_22,zooplankton,calanoid,copepoda,32,3/1/23,265_22,17.9,3,G01,1,,,G,1
+CBW_YoTB_265,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,217_22,zooplankton,holopedium,cladocera,10,3/1/23,266_22,1.72,3,G02,1,,,G,2
+CBW_YoTB_266,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,205_22,zooplankton,calanoid,copepoda,50,3/1/23,267_22,23.6,3,G03,1,,,G,3
+CBW_YoTB_267,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,209_22,zooplankton,calanoid,copepoda,50,3/1/23,268_22,26.2,3,G04,1,,,G,4
+CBW_YoTB_268,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,197_22,zooplankton,calanoid blue,copepoda,50,3/1/23,269_22,14.4,3,G05,1,,,G,5
+CBW_YoTB_269,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,225_22,zooplankton,daphnia,cladocera,30,3/1/23,270_22,1.37,3,G06,1,,,G,6
+CBW_YoTB_270,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,185_22,zooplankton,calanoid,copepoda,50,3/1/23,271_22,21.2,3,G07,1,,,G,7
+CBW_YoTB_271,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,164_22,zooplankton,ceriodaphnia,cladocera,50,3/1/23,272_22,1.01,3,G08,1,,,G,8
+CBW_YoTB_272,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,188_22,zooplankton,daphnia,cladocera,30,3/1/23,273_22,2.86,3,G09,1,,,G,9
+CBW_YoTB_273,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,180_22,zooplankton,calanoid,copepoda,50,3/1/23,274_22,25.6,3,G10,1,,,G,10
+CBW_YoTB_274,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,177_22,zooplankton,calanoid,copepoda,50,3/1/23,275_22,17.3,3,G11,1,,,G,11
+CBW_YoTB_275,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,157_22,zooplankton,holopedium,cladocera,10,3/1/23,276_22,1.04,3,G12,1,,,G,12
+CBW_YoTB_276,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,216_22,zooplankton,daphnia,cladocera,30,3/1/23,277_22,1.6,3,H01,1,,,H,1
+CBW_YoTB_277,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,208_22,zooplankton,calanoid,copepoda,50,3/1/23,278_22,11,3,H02,1,,,H,2
+CBW_YoTB_278,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,200_22,zooplankton,calanoid blue,copepoda,100,3/1/23,279_22,33.8,3,H03,1,,,H,3
+CBW_YoTB_279,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,192_22,zooplankton,daphnia,cladocera,30,3/1/23,280_22,2.68,3,H04,1,,,H,4
+CBW_YoTB_280,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,158_22,zooplankton,holopedium,cladocera,10,3/1/23,281_22,0.144,3,H05,1,,,H,5
+CBW_YoTB_281,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,181_22,zooplankton,calanoid,copepoda,81,3/1/23,282_22,28.8,3,H06,1,,,H,6
+CBW_YoTB_282,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,201_22,zooplankton,calanoid blue,copepoda,100,3/1/23,283_22,50.4,3,H07,1,,,H,7
+CBW_YoTB_283,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,193_22,zooplankton,daphnia,cladocera,100,3/1/23,284_22,7.3,3,H08,1,,,H,8
+CBW_YoTB_284,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,189_22,zooplankton,daphnia,cladocera,30,3/1/23,285_22,2.78,3,H09,1,,,H,9
+CBW_YoTB_285,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,224_22,zooplankton,daphnia,cladocera,30,3/1/23,286_22,1.83,3,H10,1,,,H,10
+CBW_YoTB_286,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,165_22,zooplankton,calanoid,copepoda,50,3/1/23,287_22,22,3,H11,1,,,H,11
+CBW_YoTB_287,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,173_22,zooplankton,daphnia,cladocera,30,3/1/23,288_22,0.798,3,H12,1,,,H,12
+CBW_YoTB_288,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,172_22,zooplankton,daphnia,cladocera,30,3/1/23,289_22,1.79,4,A01,2,,,A,1
+CBW_YoTB_289,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,212_22,zooplankton,daphnia,cladocera,30,3/2/23,290_22,1.29,4,A02,2,,,A,2
+CBW_YoTB_290,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,202_22,zooplankton,polyphemus,cladocera,10,3/2/23,291_22,1.31,4,A03,2,,,A,3
+CBW_YoTB_291,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,218_22,zooplankton,holopedium,cladocera,10,3/2/23,292_22,1.75,4,A04,2,,,A,4
+CBW_YoTB_292,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,211_22,zooplankton,calanoid,copepoda,100,3/2/23,293_22,61.6,4,A05,2,,,A,5
+CBW_YoTB_293,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,226_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,294_22,0.922,4,A06,2,,,A,6
+CBW_YoTB_294,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,227_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,295_22,0.736,4,A07,2,,,A,7
+CBW_YoTB_295,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,219_22,zooplankton,holopedium,cladocera,10,3/2/23,296_22,0.818,4,A08,2,,,A,8
+CBW_YoTB_296,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,155_22,zooplankton,holopedium,cladocera,10,3/2/23,297_22,1.06,4,A09,2,,,A,9
+CBW_YoTB_297,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,196_22,zooplankton,calanoid blue,copepoda,50,3/2/23,298_22,13.6,4,A10,2,,,A,10
+CBW_YoTB_298,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,220_22,zooplankton,holopedium,cladocera,10,3/2/23,299_22,0.876,4,A11,2,,,A,11
+CBW_YoTB_299,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,186_22,zooplankton,calanoid,copepoda,50,3/2/23,300_22,22.4,4,A12,2,,,A,12
+CBW_YoTB_300,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,195_22,zooplankton,calanoid blue,copepoda,50,3/2/23,301_22,21.4,4,B01,2,,,B,1
+CBW_YoTB_301,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,203_22,zooplankton,polyphemus,cladocera,10,3/2/23,302_22,0.99,4,B02,2,,,B,2
+CBW_YoTB_302,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,228_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,303_22,1.03,4,B03,2,,,B,3
+CBW_YoTB_303,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,163_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,304_22,1.22,4,B04,2,,,B,4
+CBW_YoTB_304,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,156_22,zooplankton,holopedium,cladocera,10,3/2/23,305_22,1.22,4,B05,2,,,B,5
+CBW_YoTB_305,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,178_22,zooplankton,calanoid,copepoda,50,3/2/23,306_22,9.62,4,B06,2,,,B,6
+CBW_YoTB_306,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,162_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,307_22,1.22,4,B07,2,,,B,7
+CBW_YoTB_307,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,154_22,zooplankton,daphnia,cladocera,98,3/2/23,308_22,4.22,4,B08,2,,,B,8
+CBW_YoTB_308,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,194_22,zooplankton,daphnia,cladocera,100,3/2/23,309_22,11.7,4,B09,2,,,B,9
+CBW_YoTB_309,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,210_22,zooplankton,calanoid,copepoda,100,3/2/23,310_22,49.4,4,B10,2,,,B,10
+CBW_YoTB_310,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,187_22,zooplankton,calanoid,copepoda,100,3/2/23,311_22,58,4,B11,2,,,B,11
+CBW_YoTB_311,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,171_22,zooplankton,daphnia,cladocera,30,3/2/23,312_22,1.11,4,B12,2,,,B,12
+CBW_YoTB_312,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,179_22,zooplankton,calanoid,copepoda,50,3/2/23,313_22,3,4,C01,2,,,C,1
+CBW_YoTB_313,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,272_22,zooplankton,calanoid,copepoda,50,3/2/23,314_22,11.5,4,C02,2,,,C,2
+CBW_YoTB_314,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,264_22,zooplankton,daphnia,cladocera,30,3/2/23,315_22,2.52,4,C03,2,,,C,3
+CBW_YoTB_315,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,280_22,zooplankton,calanoid,copepoda,50,3/2/23,316_22,3.4,4,C04,2,,,C,4
+CBW_YoTB_316,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,265_22,zooplankton,daphnia,cladocera,30,3/2/23,317_22,0.212,4,C05,2,,,C,5
+CBW_YoTB_317,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,243_22,zooplankton,holopedium,cladocera,10,3/2/23,318_22,1.03,4,C06,2,,,C,6
+CBW_YoTB_318,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,283_22,zooplankton,calanoid,copepoda,100,3/2/23,319_22,12.8,4,C07,2,,,C,7
+CBW_YoTB_319,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,289_22,zooplankton,bosmina,cladocera,50,3/2/23,320_22,0.68,4,C08,2,,,C,8
+CBW_YoTB_320,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,204_22,zooplankton,daphnia,cladocera,27,3/2/23,321_22,0.292,4,C09,2,,,C,9
+CBW_YoTB_321,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,222_22,zooplankton,holopedium,cladocera,10,3/2/23,322_22,0.474,4,C10,2,,,C,10
+CBW_YoTB_322,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,169_22,zooplankton,cyclopoid,copepoda,48,3/2/23,323_22,11.3,4,C11,2,,,C,11
+CBW_YoTB_323,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,153_22,zooplankton,daphnia,cladocera,30,3/2/23,324_22,1.16,4,C12,2,,,C,12
+CBW_YoTB_324,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,170_22,zooplankton,daphnia,cladocera,30,3/2/23,325_22,1.66,4,D01,2,,,D,1
+CBW_YoTB_325,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,161_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,326_22,0.184,4,D02,2,,,D,2
+CBW_YoTB_326,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,160_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,327_22,0.528,4,D03,2,,,D,3
+CBW_YoTB_327,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,152_22,zooplankton,daphnia,cladocera,30,3/2/23,328_22,1.28,4,D04,2,,,D,4
+CBW_YoTB_328,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,151_22,zooplankton,daphnia,cladocera,30,3/2/23,329_22,0.406,4,D05,2,,,D,5
+CBW_YoTB_329,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,230_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,330_22,0.672,4,D06,2,,,D,6
+CBW_YoTB_330,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,231_22,zooplankton,ceriodaphnia,cladocera,100,3/2/23,331_22,5.2,4,D07,2,,,D,7
+CBW_YoTB_331,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,301_22,zooplankton,daphnia,cladocera,21,3/2/23,332_22,0.25,4,D08,2,,,D,8
+CBW_YoTB_332,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,229_22,zooplankton,ceriodaphnia,cladocera,50,3/2/23,333_22,0.51,4,D09,2,,,D,9
+CBW_YoTB_333,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,213_22,zooplankton,daphnia,cladocera,30,3/2/23,334_22,0.798,4,D10,2,,,D,10
+CBW_YoTB_334,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,262_22,zooplankton,cyclopoid,copepoda,50,3/2/23,335_22,13.6,4,D11,2,,,D,11
+CBW_YoTB_335,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,221_22,zooplankton,holopedium,cladocera,10,3/2/23,336_22,0.844,4,D12,2,,,D,12
+CBW_YoTB_336,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,292_22,zooplankton,bosmina,cladocera,50,3/2/23,337_22,0.706,4,E01,2,,,E,1
+CBW_YoTB_337,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,286_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,338_22,0.72,4,E02,2,,,E,2
+CBW_YoTB_338,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,295_22,zooplankton,calanoid,copepoda,50,3/3/23,339_22,12.2,4,E03,2,,,E,3
+CBW_YoTB_339,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,304_22,zooplankton,daphnia,cladocera,100,3/3/23,340_22,1.86,4,E04,2,,,E,4
+CBW_YoTB_340,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,251_22,zooplankton,ceriodaphnia,cladocera,30,3/3/23,341_22,too low,4,E05,2,,,E,5
+CBW_YoTB_341,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,270_22,zooplankton,calanoid,copepoda,50,3/3/23,342_22,10.4,4,E06,2,,,E,6
+CBW_YoTB_342,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,260_22,zooplankton,cyclopoid,copepoda,50,3/3/23,343_22,11.8,4,E07,2,,,E,7
+CBW_YoTB_343,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,277_22,zooplankton,calanoid,copepoda,50,3/3/23,344_22,3.08,4,E08,2,,,E,8
+CBW_YoTB_344,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,269_22,zooplankton,polyphemus,cladocera,9,3/3/23,345_22,0.31,4,E09,2,,,E,9
+CBW_YoTB_345,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,278_22,zooplankton,calanoid,copepoda,50,3/3/23,346_22,18.3,4,E10,2,,,E,10
+CBW_YoTB_346,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,296_22,zooplankton,calanoid,copepoda,50,3/3/23,347_22,17.2,4,E11,2,,,E,11
+CBW_YoTB_347,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,287_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,348_22,2.14,4,E12,2,,,E,12
+CBW_YoTB_348,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,305_22,zooplankton,calanoid,copepoda,50,3/3/23,349_22,25.4,4,F01,2,,,F,1
+CBW_YoTB_349,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,232_22,zooplankton,ceriodaphnia,cladocera,100,3/3/23,350_22,7.96,4,F02,2,,,F,2
+CBW_YoTB_350,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,271_22,zooplankton,calanoid,copepoda,50,3/3/23,351_22,55.8,4,F03,2,,,F,3
+CBW_YoTB_351,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,242_22,zooplankton,holopedium,cladocera,10,3/3/23,352_22,0.176,4,F04,2,,,F,4
+CBW_YoTB_352,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,279_22,zooplankton,calanoid,copepoda,50,3/3/23,353_22,10.2,4,F05,2,,,F,5
+CBW_YoTB_353,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,B8,negative.control,negative.control,ext.blank,NA,3/3/23,354_22,too low,4,F06,2,<< negative.control,,F,6
+CBW_YoTB_354,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,258_22,zooplankton,calanoid,copepoda,100,3/3/23,355_22,0.924,4,F07,2,,,F,7
+CBW_YoTB_355,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,233_22,zooplankton,daphnia,cladocera,30,3/3/23,356_22,1.65,4,F08,2,,,F,8
+CBW_YoTB_356,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,259_22,zooplankton,cyclopoid,copepoda,50,3/3/23,357_22,14.2,4,F09,2,,,F,9
+CBW_YoTB_357,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,261_22,zooplankton,cyclopoid,copepoda,50,3/3/23,358_22,17.7,4,F10,2,,,F,10
+CBW_YoTB_358,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,250_22,zooplankton,polyphemus,cladocera,10,3/3/23,359_22,0.114,4,F11,2,,,F,11
+CBW_YoTB_359,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,234_22,zooplankton,daphnia,cladocera,30,3/3/23,360_22,3.7,4,F12,2,,,F,12
+CBW_YoTB_360,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,241_22,zooplankton,calanoid,copepoda,42,3/3/23,361_22,23.6,4,G01,2,,,G,1
+CBW_YoTB_361,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,365_22,zooplankton,calanoid,copepoda,100,3/3/23,362_22,53.8,4,G02,2,,,G,2
+CBW_YoTB_362,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,331_22,zooplankton,calanoid,copepoda,50,3/3/23,363_22,24.2,4,G03,2,,,G,3
+CBW_YoTB_363,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,330_22,zooplankton,calanoid,copepoda,50,3/3/23,364_22,24.2,4,G04,2,,,G,4
+CBW_YoTB_364,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,390_22,zooplankton,daphnia,cladocera,30,3/3/23,365_22,1.86,4,G05,2,,,G,5
+CBW_YoTB_365,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,372_22,zooplankton,calanoid,copepoda,50,3/3/23,366_22,15,4,G06,2,,,G,6
+CBW_YoTB_366,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,363_22,zooplankton,calanoid,copepoda,50,3/3/23,367_22,31.8,4,G07,2,,,G,7
+CBW_YoTB_367,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,325_22,zooplankton,daphnia,cladocera,30,3/3/23,368_22,1.85,4,G08,2,,,G,8
+CBW_YoTB_368,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,362_22,zooplankton,calanoid,copepoda,50,3/3/23,369_22,24,4,G09,2,,,G,9
+CBW_YoTB_369,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,353_22,zooplankton,holopedium,cladocera,10,3/3/23,370_22,0.232,4,G10,2,,,G,10
+CBW_YoTB_370,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,327_22,zooplankton,daphnia,cladocera,30,3/3/23,371_22,1.81,4,G11,2,,,G,11
+CBW_YoTB_371,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,324_22,zooplankton,daphnia,cladocera,30,3/3/23,372_22,2.14,4,G12,2,,,G,12
+CBW_YoTB_372,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,346_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,373_22,1.88,4,H01,2,,,H,1
+CBW_YoTB_373,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,344_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,374_22,0.922,4,H02,2,,,H,2
+CBW_YoTB_374,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,382_22,zooplankton,calanoid large,copepoda,30,3/3/23,375_22,2.78,4,H03,2,,,H,3
+CBW_YoTB_375,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,315_22,zooplankton,calanoid,copepoda,100,3/3/23,376_22,48,4,H04,2,,,H,4
+CBW_YoTB_376,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,377_22,zooplankton,calanoid,copepoda,50,3/3/23,377_22,32.2,4,H05,2,,,H,5
+CBW_YoTB_377,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,334_22,zooplankton,calanoid,copepoda,50,3/3/23,378_22,22.4,4,H06,2,,,H,6
+CBW_YoTB_378,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,368_22,zooplankton,daphnia,cladocera,30,3/3/23,379_22,3.44,4,H07,2,,,H,7
+CBW_YoTB_379,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,341_22,zooplankton,daphnia,cladocera,30,3/3/23,380_22,1.9,4,H08,2,,,H,8
+CBW_YoTB_380,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,314_22,zooplankton,calanoid,copepoda,50,3/3/23,381_22,29.6,4,H09,2,,,H,9
+CBW_YoTB_381,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,343_22,zooplankton,daphnia,cladocera,100,3/3/23,382_22,8.66,4,H10,2,,,H,10
+CBW_YoTB_382,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,364_22,zooplankton,calanoid,copepoda,50,3/3/23,383_22,34,4,H11,2,,,H,11
+CBW_YoTB_383,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,359_22,zooplankton,holopedium,cladocera,10,3/3/23,384_22,0.494,4,H12,2,,,H,12
+CBW_YoTB_384,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,354_22,zooplankton,holopedium,cladocera,7,3/3/23,385_22,0.478,5,A01,1,,,A,1
+CBW_YoTB_385,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,235_22,zooplankton,daphnia,cladocera,30,3/3/23,386_22,2.02,5,A02,1,,,A,2
+CBW_YoTB_386,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,244_22,zooplankton,holopedium,cladocera,10,3/3/23,387_22,0.606,5,A03,1,,,A,3
+CBW_YoTB_387,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,255_22,zooplankton,calanoid,copepoda,50,3/3/23,388_22,16.6,5,A04,1,,,A,4
+CBW_YoTB_388,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,290_22,zooplankton,bosmina,cladocera,50,3/3/23,389_22,1.47,5,A05,1,,,A,5
+CBW_YoTB_389,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,257_22,zooplankton,calanoid,copepoda,100,3/3/23,390_22,45.6,5,A06,1,,,A,6
+CBW_YoTB_390,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,297_22,zooplankton,calanoid,copepoda,50,3/3/23,391_22,28.4,5,A07,1,,,A,7
+CBW_YoTB_391,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,293_22,zooplankton,bosmina,cladocera,100,3/3/23,392_22,4.52,5,A08,1,,,A,8
+CBW_YoTB_392,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,302_22,zooplankton,daphnia,cladocera,30,3/3/23,393_22,0.832,5,A09,1,,,A,9
+CBW_YoTB_393,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,303_22,zooplankton,daphnia,cladocera,100,3/3/23,394_22,3.84,5,A10,1,,,A,10
+CBW_YoTB_394,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,284_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,395_22,1.58,5,A11,1,,,A,11
+CBW_YoTB_395,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,253_22,zooplankton,calanoid,copepoda,50,3/3/23,396_22,19.3,5,A12,1,,,A,12
+CBW_YoTB_396,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,256_22,zooplankton,calanoid,copepoda,50,3/3/23,397_22,20.6,5,B01,1,,,B,1
+CBW_YoTB_397,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,266_22,zooplankton,daphnia,cladocera,30,3/3/23,398_22,1.83,5,B02,1,,,B,2
+CBW_YoTB_398,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,308_22,zooplankton,calanoid,copepoda,50,3/3/23,399_22,15.3,5,B03,1,,,B,3
+CBW_YoTB_399,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,300_22,zooplankton,calanoid,copepoda,100,3/3/23,400_22,37.4,5,B04,1,,,B,4
+CBW_YoTB_400,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,299_22,zooplankton,calanoid,copepoda,100,3/3/23,401_22,43.4,5,B05,1,,,B,5
+CBW_YoTB_401,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,309_22,zooplankton,calanoid,copepoda,38,3/3/23,402_22,12.8,5,B06,1,,,B,6
+CBW_YoTB_402,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,291_22,zooplankton,bosmina,cladocera,50,3/3/23,403_22,0.314,5,B07,1,,,B,7
+CBW_YoTB_403,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,310_22,zooplankton,calanoid,copepoda,50,3/3/23,404_22,28.6,5,B08,1,,,B,8
+CBW_YoTB_404,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,281_22,zooplankton,calanoid,copepoda,50,3/3/23,405_22,6.1,5,B09,1,,,B,9
+CBW_YoTB_405,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,311_22,zooplankton,calanoid,copepoda,50,3/3/23,406_22,24.4,5,B10,1,,,B,10
+CBW_YoTB_406,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,306_22,zooplankton,calanoid,copepoda,50,3/3/23,407_22,16.2,5,B11,1,,,B,11
+CBW_YoTB_407,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,312_22,zooplankton,calanoid,copepoda,50,3/3/23,408_22,22.6,5,B12,1,,,B,12
+CBW_YoTB_408,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,275_22,zooplankton,calanoid,copepoda,100,3/3/23,409_22,69.2,5,C01,1,,,C,1
+CBW_YoTB_409,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,342_22,zooplankton,daphnia,cladocera,100,3/3/23,410_22,5.86,5,C02,1,,,C,2
+CBW_YoTB_410,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,371_22,zooplankton,daphnia,cladocera,30,3/3/23,411_22,5.3,5,C03,1,,,C,3
+CBW_YoTB_411,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,381_22,zooplankton,calanoid,copepoda,45,3/3/23,412_22,29.2,5,C04,1,,,C,4
+CBW_YoTB_412,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,380_22,zooplankton,calanoid,copepoda,50,3/3/23,413_22,21.8,5,C05,1,,,C,5
+CBW_YoTB_413,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,378_22,zooplankton,calanoid,copepoda,50,3/3/23,414_22,27.2,5,C06,1,,,C,6
+CBW_YoTB_414,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,337_22,zooplankton,daphnia,cladocera,30,3/3/23,415_22,3.26,5,C07,1,,,C,7
+CBW_YoTB_415,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,339_22,zooplankton,daphnia,cladocera,30,3/3/23,416_22,4.74,5,C08,1,,,C,8
+CBW_YoTB_416,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,329_22,zooplankton,daphnia,cladocera,100,3/3/23,417_22,3.76,5,C09,1,,,C,9
+CBW_YoTB_417,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,386_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,418_22,2.02,5,C10,1,,,C,10
+CBW_YoTB_418,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,369_22,zooplankton,daphnia,cladocera,30,3/3/23,419_22,4.9,5,C11,1,,,C,11
+CBW_YoTB_419,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,373_22,zooplankton,calanoid,copepoda,50,3/3/23,420_22,10.8,5,C12,1,,,C,12
+CBW_YoTB_420,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,374_22,zooplankton,calanoid,copepoda,50,3/3/23,421_22,18.9,5,D01,1,,,D,1
+CBW_YoTB_421,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,335_22,zooplankton,calanoid,copepoda,100,3/3/23,422_22,37.8,5,D02,1,,,D,2
+CBW_YoTB_422,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,336_22,zooplankton,calanoid,copepoda,100,3/3/23,423_22,35,5,D03,1,,,D,3
+CBW_YoTB_423,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,376_22,zooplankton,calanoid,copepoda,50,3/3/23,424_22,10.9,5,D04,1,,,D,4
+CBW_YoTB_424,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,323_22,zooplankton,daphnia,cladocera,30,3/3/23,425_22,1.55,5,D05,1,,,D,5
+CBW_YoTB_425,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,383_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,426_22,1.93,5,D06,1,,,D,6
+CBW_YoTB_426,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,316_22,zooplankton,cyclopoid,copepoda,50,3/3/23,427_22,15.4,5,D07,1,,,D,7
+CBW_YoTB_427,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,333_22,zooplankton,calanoid,copepoda,50,3/3/23,428_22,23.2,5,D08,1,,,D,8
+CBW_YoTB_428,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,350_22,zooplankton,ceriodaphnia,cladocera,100,3/3/23,429_22,1.49,5,D09,1,,,D,9
+CBW_YoTB_429,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,345_22,zooplankton,ceriodaphnia,cladocera,50,3/3/23,430_22,1.04,5,D10,1,,,D,10
+CBW_YoTB_430,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,358_22,zooplankton,holopedium,cladocera,10,3/3/23,431_22,0.656,5,D11,1,,,D,11
+CBW_YoTB_431,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,332_22,zooplankton,calanoid,copepoda,50,3/3/23,432_22,21.8,5,D12,1,,,D,12
+CBW_YoTB_432,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,321_22,zooplankton,polyphemus,cladocera,10,3/3/23,433_22,0.998,5,E01,1,,,E,1
+CBW_YoTB_433,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,320_22,zooplankton,polyphemus,cladocera,10,3/6/23,434_22,0.654,5,E02,1,,,E,2
+CBW_YoTB_434,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,263_22,zooplankton,cyclopoid,copepoda,50,3/6/23,435_22,13.9,5,E03,1,,,E,3
+CBW_YoTB_435,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,236_22,zooplankton,daphnia,cladocera,30,3/6/23,436_22,2,5,E04,1,,,E,4
+CBW_YoTB_436,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,267_22,zooplankton,daphnia,cladocera,30,3/6/23,437_22,1.34,5,E05,1,,,E,5
+CBW_YoTB_437,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,237_22,zooplankton,daphnia,cladocera,30,3/6/23,438_22,2.32,5,E06,1,,,E,6
+CBW_YoTB_438,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,338_22,zooplankton,daphnia,cladocera,30,3/6/23,439_22,0.876,5,E07,1,,,E,7
+CBW_YoTB_439,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,318_22,zooplankton,cyclopoid,copepoda,50,3/6/23,440_22,12,5,E08,1,,,E,8
+CBW_YoTB_440,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,288_22,zooplankton,bosmina,cladocera,50,3/6/23,441_22,1.36,5,E09,1,,,E,9
+CBW_YoTB_441,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,366_22,zooplankton,calanoid,copepoda,100,3/6/23,442_22,61,5,E10,1,,,E,10
+CBW_YoTB_442,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,348_22,zooplankton,ceriodaphnia,cladocera,50,3/6/23,443_22,1.76,5,E11,1,,,E,11
+CBW_YoTB_443,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,387_22,zooplankton,ceriodaphnia,cladocera,50,3/6/23,444_22,1.54,5,E12,1,,,E,12
+CBW_YoTB_444,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,355_22,zooplankton,cyclopoid,copepoda,42,3/6/23,445_22,2.14,5,F01,1,,,F,1
+CBW_YoTB_445,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,393_22,zooplankton,daphnia,cladocera,100,3/6/23,446_22,5.42,5,F02,1,,,F,2
+CBW_YoTB_446,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,360_22,zooplankton,calanoid,copepoda,50,3/6/23,447_22,19.2,5,F03,1,,,F,3
+CBW_YoTB_447,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,317_22,zooplankton,cyclopoid,copepoda,50,3/6/23,448_22,10.6,5,F04,1,,,F,4
+CBW_YoTB_448,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,249_22,zooplankton,holopedium,cladocera,10,3/6/23,449_22,0.544,5,F05,1,,,F,5
+CBW_YoTB_449,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,319_22,zooplankton,cyclopoid,copepoda,50,3/6/23,450_22,10.7,5,F06,1,,,F,6
+CBW_YoTB_450,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,349_22,zooplankton,ceriodaphnia,cladocera,100,3/6/23,451_22,2.56,5,F07,1,,,F,7
+CBW_YoTB_451,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,245_22,zooplankton,holopedium,cladocera,10,3/6/23,452_22,0.744,5,F08,1,,,F,8
+CBW_YoTB_452,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,239_22,zooplankton,daphnia,cladocera,100,3/6/23,453_22,6.02,5,F09,1,,,F,9
+CBW_YoTB_453,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,389_22,zooplankton,daphnia,cladocera,30,3/6/23,454_22,1.95,5,F10,1,,,F,10
+CBW_YoTB_454,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,307_22,zooplankton,calanoid,copepoda,50,3/6/23,455_22,23,5,F11,1,,,F,11
+CBW_YoTB_455,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,238_22,zooplankton,daphnia,cladocera,100,3/6/23,456_22,4.48,5,F12,1,,,F,12
+CBW_YoTB_456,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,282_22,zooplankton,calanoid,copepoda,100,3/6/23,457_22,23.8,5,G01,1,,,G,1
+CBW_YoTB_457,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,294_22,zooplankton,calanoid,copepoda,50,3/6/23,458_22,10.9,5,G02,1,,,G,2
+CBW_YoTB_458,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,246_22,zooplankton,holopedium,cladocera,10,3/6/23,459_22,0.264,5,G03,1,,,G,3
+CBW_YoTB_459,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,273_22,zooplankton,calanoid,copepoda,50,3/6/23,460_22,18.9,5,G04,1,,,G,4
+CBW_YoTB_460,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,392_22,zooplankton,daphnia,cladocera,30,3/6/23,461_22,2.42,5,G05,1,,,G,5
+CBW_YoTB_461,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,248_22,zooplankton,holopedium,cladocera,10,3/6/23,462_22,1.48,5,G06,1,,,G,6
+CBW_YoTB_462,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,388_22,zooplankton,daphnia,cladocera,30,3/6/23,463_22,2.5,5,G07,1,,,G,7
+CBW_YoTB_463,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,258_22,zooplankton,calanoid,copepoda,100,3/6/23,464_22,28.6,5,G08,1,,,G,8
+CBW_YoTB_464,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,367_22,zooplankton,daphnia,cladocera,30,3/6/23,465_22,11.4,5,G09,1,"<< low volume, 10ul only, no more remaining",,G,9
+CBW_YoTB_465,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,391_22,zooplankton,daphnia,cladocera,30,3/6/23,466_22,2.8,5,G10,1,,,G,10
+CBW_YoTB_466,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,347_22,zooplankton,ceriodaphnia,cladocera,50,3/6/23,467_22,2.28,5,G11,1,,,G,11
+CBW_YoTB_467,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,298_22,zooplankton,calanoid,copepoda,50,3/6/23,468_22,21,5,G12,1,,,G,12
+CBW_YoTB_468,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,326_22,zooplankton,daphnia,cladocera,30,3/6/23,469_22,2.5,5,H01,1,,,H,1
+CBW_YoTB_469,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,B9,negative.control,negative.control,ext.blank,NA,3/6/23,470_22,too low,5,H02,1,<< negative.control,,H,2
+CBW_YoTB_470,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,285_22,zooplankton,ceriodaphnia,cladocera,50,3/6/23,471_22,1.45,5,H03,1,,,H,3
+CBW_YoTB_471,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,361_22,zooplankton,calanoid,copepoda,50,3/6/23,472_22,20.4,5,H04,1,,,H,4
+CBW_YoTB_472,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,385_22,zooplankton,ceriodaphnia,cladocera,50,3/6/23,473_22,8.14,5,H05,1,,,H,5
+CBW_YoTB_473,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,356_22,zooplankton,holopedium,cladocera,10,3/6/23,474_22,1.96,5,H06,1,,,H,6
+CBW_YoTB_474,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,357_22,zooplankton,holopedium,cladocera,10,3/6/23,475_22,2.22,5,H07,1,,,H,7
+CBW_YoTB_475,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,328_22,zooplankton,daphnia,cladocera,100,3/6/23,476_22,7.78,5,H08,1,,,H,8
+CBW_YoTB_476,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,379_22,zooplankton,calanoid,copepoda,50,3/6/23,477_22,30.8,5,H09,1,,,H,9
+CBW_YoTB_477,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,262_22,zooplankton,cyclopoid,copepoda,50,3/6/23,478_22,15.5,5,H10,1,,,H,10
+CBW_YoTB_478,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,276_22,zooplankton,calanoid,copepoda,100,3/6/23,479_22,63,5,H11,1,,,H,11
+CBW_YoTB_479,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,340_22,zooplankton,daphnia,cladocera,30,3/6/23,480_22,4.5,5,H12,1,,,H,12
+CBW_YoTB_480,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,240_22,zooplankton,calanoid,copepoda,50,3/6/23,481_22,30.6,6,A01,2,,,A,1
+CBW_YoTB_481,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,411_22,zooplankton,cyclopoid,copepoda,50,3/9/23,482_22,16.7,6,A02,2,,,A,2
+CBW_YoTB_482,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,409_22,zooplankton,holopedium,cladocera,10,3/9/23,483_22,2.12,6,A03,2,,,A,3
+CBW_YoTB_483,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,419_22,zooplankton,daphnia,cladocera,30,3/9/23,484_22,3.48,6,A04,2,,,A,4
+CBW_YoTB_484,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,418_22,zooplankton,daphnia,cladocera,30,3/9/23,485_22,2.94,6,A05,2,,,A,5
+CBW_YoTB_485,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,417_22,zooplankton,daphnia,cladocera,30,3/9/23,486_22,4.26,6,A06,2,,,A,6
+CBW_YoTB_486,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,412_22,zooplankton,cyclopoid,copepoda,50,3/9/23,487_22,9.82,6,A07,2,,,A,7
+CBW_YoTB_487,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,400_22,zooplankton,holopedium,cladocera,10,3/9/23,488_22,1.49,6,A08,2,,,A,8
+CBW_YoTB_488,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,322_22,zooplankton,polyphemus,cladocera,10,3/9/23,489_22,1.45,6,A09,2,,,A,9
+CBW_YoTB_489,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,274_22,zooplankton,calanoid,copepoda,50,3/9/23,490_22,25.2,6,A10,2,,,A,10
+CBW_YoTB_490,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,370_22,zooplankton,daphnia,cladocera,30,3/9/23,491_22,7.2,6,A11,2,,,A,11
+CBW_YoTB_491,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,410_22,zooplankton,holopedium,cladocera,10,3/9/23,492_22,0.866,6,A12,2,,,A,12
+CBW_YoTB_492,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,352_22,zooplankton,holopedium,cladocera,10,3/9/23,493_22,1.11,6,B01,2,,,B,1
+CBW_YoTB_493,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,384_21,zooplankton,ceriodaphnia,cladocera,50,3/9/23,494_22,1.64,6,B02,2,,,B,2
+CBW_YoTB_494,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,402_22,zooplankton,holopedium,cladocera,10,3/9/23,495_22,0.722,6,B03,2,,,B,3
+CBW_YoTB_495,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,415_22,zooplankton,cyclopoid,copepoda,45,3/9/23,496_22,15.6,6,B04,2,,,B,4
+CBW_YoTB_496,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,313_22,zooplankton,calanoid,copepoda,50,3/9/23,497_22,25.4,6,B05,2,,,B,5
+CBW_YoTB_497,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,351_22,zooplankton,holopedium,cladocera,10,3/9/23,498_22,1.09,6,B06,2,,,B,6
+CBW_YoTB_498,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,420_22,zooplankton,daphnia,cladocera,30,3/9/23,499_22,2.62,6,B07,2,,,B,7
+CBW_YoTB_499,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,414_22,zooplankton,cyclopoid,copepoda,50,3/9/23,500_22,11,6,B08,2,,,B,8
+CBW_YoTB_500,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,413_22,zooplankton,cyclopoid,copepoda,50,3/9/23,501_22,11.8,6,B09,2,,,B,9
+CBW_YoTB_501,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,247_22,zooplankton,holopedium,cladocera,10,3/9/23,502_22,1.04,6,B10,2,,,B,10
+CBW_YoTB_502,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,401_22,zooplankton,holopedium,cladocera,10,3/9/23,503_22,1.01,6,B11,2,,,B,11
+CBW_YoTB_503,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,254_22,zooplankton,calanoid,copepoda,50,3/9/23,504_22,12.2,6,B12,2,,,B,12
+CBW_YoTB_504,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,375_22,zooplankton,calanoid,copepoda,50,3/9/23,505_22,7.22,6,C01,2,,,C,1
+CBW_YoTB_505,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,404_22,zooplankton,holopedium,cladocera,10,3/9/23,506_22,1.24,6,C02,2,,,C,2
+CBW_YoTB_506,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,407_22,zooplankton,holopedium,cladocera,10,3/9/23,507_22,0.7,6,C03,2,,,C,3
+CBW_YoTB_507,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,406_22,zooplankton,holopedium,cladocera,10,3/9/23,508_22,0.526,6,C04,2,,,C,4
+CBW_YoTB_508,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,405_22,zooplankton,holopedium,cladocera,10,3/9/23,514_22,0.842,6,C05,2,,,C,5
+CBW_YoTB_509,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,399_22,zooplankton,holopedium,cladocera,10,3/9/23,517_22,1.51,6,C06,2,,,C,6
+CBW_YoTB_510,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,416_22,zooplankton,daphnia,cladocera,30,3/9/23,518_22,2.42,6,C07,2,,,C,7
+CBW_YoTB_511,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,408_22,zooplankton,holopedium,cladocera,10,3/9/23,522_22,0.656,6,C08,2,,,C,8
+CBW_YoTB_512,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead,403_22,zooplankton,holopedium,cladocera,10,3/9/23,523_22,0.522,6,C09,2,,,C,9
+CBW_YoTB_513,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,398_22,zooplankton,calanoid large,copepoda,30,3/9/23,548_22,7.58,6,C10,2,,,C,10
+CBW_YoTB_514,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,394_22,zooplankton,calanoid large,copepoda,30,3/9/23,549_22,16.7,6,C11,2,,,C,11
+CBW_YoTB_515,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,395_22,zooplankton,calanoid large,copepoda,30,3/9/23,550_22,3.9,6,C12,2,,,C,12
+CBW_YoTB_516,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,396_22,zooplankton,calanoid large,copepoda,30,3/9/23,551_22,7.46,6,D01,2,,,D,1
+CBW_YoTB_517,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,397_22,zooplankton,calanoid large,copepoda,30,3/9/23,552_22,12.8,6,D02,2,,,D,2
+CBW_YoTB_518,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,78,zooplankton,daphnia,cladocera,30,NA,129,0.738,6,D03,2,T4,,D,3
+CBW_YoTB_519,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,78,zooplankton,daphnia,cladocera,30,NA,130,0.951,6,D04,2,T4,,D,4
+CBW_YoTB_520,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,78,zooplankton,daphnia,cladocera,30,NA,131,0.831,6,D05,2,T4,,D,5
+CBW_YoTB_521,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,78,zooplankton,daphnia,cladocera,30,NA,132,1.01,6,D06,2,T4,,D,6
+CBW_YoTB_522,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,80,zooplankton,cyclopoid,copepoda,50,NA,133,6.04,6,D07,2,T4,,D,7
+CBW_YoTB_523,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,80,zooplankton,cyclopoid,copepoda,50,NA,134,5.9,6,D08,2,T4,,D,8
+CBW_YoTB_524,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,80,zooplankton,cyclopoid,copepoda,50,NA,135,10.7,6,D09,2,T4,,D,9
+CBW_YoTB_525,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,80,zooplankton,cyclopoid,copepoda,50,NA,136,10,6,D10,2,T4,,D,10
+CBW_YoTB_526,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,81,zooplankton,calanoid,copepoda,50,NA,137,15,6,D11,2,T4,,D,11
+CBW_YoTB_527,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,81,zooplankton,calanoid,copepoda,50,NA,138,11.2,6,D12,2,T4,,D,12
+CBW_YoTB_528,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,81,zooplankton,calanoid,copepoda,50,NA,139,8.98,6,E01,2,T4,,E,1
+CBW_YoTB_529,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,82,zooplankton,daphnia,cladocera,30,NA,140,1.09,6,E02,2,T4,,E,2
+CBW_YoTB_530,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,82,zooplankton,daphnia,cladocera,30,NA,141,1.35,6,E03,2,T4,,E,3
+CBW_YoTB_531,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,82,zooplankton,daphnia,cladocera,30,NA,142,0.802,6,E04,2,T4,,E,4
+CBW_YoTB_532,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,82,zooplankton,daphnia,cladocera,30,NA,143,1.8,6,E05,2,T4,,E,5
+CBW_YoTB_533,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,83,zooplankton,calanoid,copepoda,50,NA,144,12.4,6,E06,2,T4,,E,6
+CBW_YoTB_534,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,83,zooplankton,calanoid,copepoda,50,NA,145,18.2,6,E07,2,T4,,E,7
+CBW_YoTB_535,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,83,zooplankton,calanoid,copepoda,50,NA,146,17.5,6,E08,2,T4,,E,8
+CBW_YoTB_536,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,83,zooplankton,calanoid,copepoda,50,NA,147,13.9,6,E09,2,T4,,E,9
+CBW_YoTB_537,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,84,zooplankton,cyclopoid,copepoda,50,NA,148,6.51,6,E10,2,T4,,E,10
+CBW_YoTB_538,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,84,zooplankton,cyclopoid,copepoda,50,NA,149,4.54,6,E11,2,T4,,E,11
+CBW_YoTB_539,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,84,zooplankton,cyclopoid,copepoda,50,NA,150,5.54,6,E12,2,T4,,E,12
+CBW_YoTB_540,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,84,zooplankton,cyclopoid,copepoda,35,NA,151,2.37,6,F01,2,T4,,F,1
+CBW_YoTB_541,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,86,zooplankton,bosmina,cladocera,50,NA,152,too low,6,F02,2,T4,,F,2
+CBW_YoTB_542,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,86,zooplankton,bosmina,cladocera,50,NA,153,too low,6,F03,2,T4,,F,3
+CBW_YoTB_543,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,92,zooplankton,daphnia,cladocera,30,NA,154,2.5,6,F04,2,T4,,F,4
+CBW_YoTB_544,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,92,zooplankton,daphnia,cladocera,30,NA,155,3.61,6,F05,2,T4,,F,5
+CBW_YoTB_545,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,92,zooplankton,daphnia,cladocera,30,NA,156,1.44,6,F06,2,T4,,F,6
+CBW_YoTB_546,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,92,zooplankton,daphnia,cladocera,30,NA,157,1.69,6,F07,2,T4,,F,7
+CBW_YoTB_547,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,94,zooplankton,cyclopoid,copepoda,50,NA,158,8.46,6,F08,2,T4,,F,8
+CBW_YoTB_548,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,94,zooplankton,cyclopoid,copepoda,50,NA,159,9.2,6,F09,2,T4,,F,9
+CBW_YoTB_549,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,94,zooplankton,cyclopoid,copepoda,50,NA,160,11,6,F10,2,T4,,F,10
+CBW_YoTB_550,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,94,zooplankton,cyclopoid,copepoda,50,NA,161,6.7,6,F11,2,T4,,F,11
+CBW_YoTB_551,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,95,zooplankton,calanoid,copepoda,50,NA,162,10.9,6,F12,2,T4,,F,12
+CBW_YoTB_552,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,95,zooplankton,calanoid,copepoda,50,NA,163,11.1,6,G01,2,T4,,G,1
+CBW_YoTB_553,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,87,zooplankton,daphnia,cladocera,30,NA,164,1.16,6,G02,2,T4,,G,2
+CBW_YoTB_554,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,87,zooplankton,daphnia,cladocera,30,NA,165,1.49,6,G03,2,T4,,G,3
+CBW_YoTB_555,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,87,zooplankton,daphnia,cladocera,30,NA,166,4.25,6,G04,2,T4,,G,4
+CBW_YoTB_556,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,87,zooplankton,daphnia,cladocera,30,NA,167,1.65,6,G05,2,T4,,G,5
+CBW_YoTB_557,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,89,zooplankton,calanoid,copepoda,50,NA,168,43.7,6,G06,2,T4,,G,6
+CBW_YoTB_558,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,89,zooplankton,calanoid,copepoda,50,NA,169,38.2,6,G07,2,T4,,G,7
+CBW_YoTB_559,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,89,zooplankton,calanoid,copepoda,50,NA,170,23.2,6,G08,2,T4,,G,8
+CBW_YoTB_560,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,89,zooplankton,calanoid,copepoda,50,NA,171,33.5,6,G09,2,T4,,G,9
+CBW_YoTB_561,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,91,zooplankton,cyclopoid,copepoda,50,NA,172,2.88,6,G10,2,T4,,G,10
+CBW_YoTB_562,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,91,zooplankton,cyclopoid,copepoda,50,NA,173,3.01,6,G11,2,T4,,G,11
+CBW_YoTB_563,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,96,zooplankton,daphnia,cladocera,30,NA,174,4.62,6,G12,2,T4,,G,12
+CBW_YoTB_564,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,96,zooplankton,daphnia,cladocera,30,NA,175,2.72,6,H01,2,T4,,H,1
+CBW_YoTB_565,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,96,zooplankton,daphnia,cladocera,30,NA,176,1.75,6,H02,2,T4,,H,2
+CBW_YoTB_566,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,96,zooplankton,daphnia,cladocera,30,NA,177,1.41,6,H03,2,T4,,H,3
+CBW_YoTB_567,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,98,zooplankton,cyclopoid,copepoda,50,NA,178,8.32,6,H04,2,T4,,H,4
+CBW_YoTB_568,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,98,zooplankton,cyclopoid,copepoda,50,NA,179,10.7,6,H05,2,T4,,H,5
+CBW_YoTB_569,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,98,zooplankton,cyclopoid,copepoda,50,NA,180,5.77,6,H06,2,T4,,H,6
+CBW_YoTB_570,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,98,zooplankton,cyclopoid,copepoda,50,NA,181,7.18,6,H07,2,T4,,H,7
+CBW_YoTB_571,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,100,zooplankton,calanoid,copepoda,50,NA,182,10.7,6,H08,2,T4,,H,8
+CBW_YoTB_572,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook ,100,zooplankton,calanoid,copepoda,50,NA,183,12.5,6,H09,2,T4,,H,9
+CBW_YoTB_573,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,101,zooplankton,calanoid,copepoda,50,NA,184,11.6,6,H10,2,T4,,H,10
+CBW_YoTB_574,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,101,zooplankton,calanoid,copepoda,50,NA,185,11.6,6,H11,2,T4,,H,11
+CBW_YoTB_575,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,101,zooplankton,calanoid,copepoda,50,NA,186,15.6,6,H12,2,T4,,H,12
+CBW_YoTB_576,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,101,zooplankton,calanoid,copepoda,50,NA,187,29,7,A01,1,T4,,A,1
+CBW_YoTB_577,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,102,zooplankton,daphnia,cladocera,30,NA,188,1.57,7,A02,1,T4,,A,2
+CBW_YoTB_578,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,102,zooplankton,daphnia,cladocera,30,NA,189,0.61,7,A03,1,T4,,A,3
+CBW_YoTB_579,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,102,zooplankton,daphnia,cladocera,30,NA,190,1.57,7,A04,1,T4,,A,4
+CBW_YoTB_580,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,102,zooplankton,daphnia,cladocera,30,NA,191,0.563,7,A05,1,T4,,A,5
+CBW_YoTB_581,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,103,zooplankton,bosmina,cladocera,50,NA,192,0.05,7,A06,1,T4,,A,6
+CBW_YoTB_582,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,103,zooplankton,bosmina,cladocera,50,NA,193,0.265,7,A07,1,T4,,A,7
+CBW_YoTB_583,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,104,zooplankton,holopedium,cladocera,10,NA,194,0.501,7,A08,1,T4,,A,8
+CBW_YoTB_584,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,104,zooplankton,holopedium,cladocera,10,NA,195,0.278,7,A09,1,T4,,A,9
+CBW_YoTB_585,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,104,zooplankton,holopedium,cladocera,10,NA,196,0.794,7,A10,1,T4,,A,10
+CBW_YoTB_586,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,104,zooplankton,holopedium,cladocera,10,NA,197,0.701,7,A11,1,T4,,A,11
+CBW_YoTB_587,Zoop Microbiome,Sierra Nevada,2021,7/9/21,Gaylor.2.upper,NA,water_sierra,NA,water,1440,,01_W21,7.82,7,A12,1,,,A,12
+CBW_YoTB_588,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise2,NA,water_sierra,NA,water,180,,02_W21,1.2,7,B01,1,,,B,1
+CBW_YoTB_589,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise3,NA,water_sierra,NA,water,340,,03_W21,0.198,7,B02,1,,,B,2
+CBW_YoTB_590,Zoop Microbiome,Sierra Nevada,2021,7/14/21,Sunrise1,NA,water_sierra,NA,water,300,,04_W21,1.61,7,B03,1,,,B,3
+CBW_YoTB_591,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Virginia,NA,water_sierra,NA,water,1620,,05_W21,6.24,7,B04,1,,,B,4
+CBW_YoTB_592,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.2.upper,NA,water_sierra,NA,water,480,,06_W21,3.78,7,B05,1,Cathedral 2 Upper,,B,5
+CBW_YoTB_593,Zoop Microbiome,Sierra Nevada,2021,7/23/21,Convict ,NA,water_sierra,NA,water,1200,,07_W21,2.64,7,B06,1,,,B,6
+CBW_YoTB_594,Zoop Microbiome,Sierra Nevada,2021,7/9/21,Granite.1.lower,NA,water_sierra,NA,water,1200,,08_W21,5.14,7,B07,1,,,B,7
+CBW_YoTB_595,Zoop Microbiome,Sierra Nevada,2021,7/7/21,Eastern Brook Pond A,NA,water_sierra,NA,water,330,,09_W21,6.2,7,B08,1,,,B,8
+CBW_YoTB_596,Zoop Microbiome,Sierra Nevada,2021,7/13/21,May,NA,water_sierra,NA,water,1020,,10_W21,0.89,7,B09,1,,,B,9
+CBW_YoTB_597,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Greenstone,NA,water_sierra,NA,water,420,,11_W21,0.122,7,B10,1,,,B,10
+CBW_YoTB_598,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeThree,NA,water_sierra,NA,water,360,,12_W21,4.6,7,B11,1,,,B,11
+CBW_YoTB_599,Zoop Microbiome,Sierra Nevada,2021,7/8/21,Blue,NA,water_sierra,NA,water,1440,,13_W21,6.78,7,B12,1,,,B,12
+CBW_YoTB_600,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeTwo,NA,water_sierra,NA,water,210,,14_W21,2.62,7,C01,1,,,C,1
+CBW_YoTB_601,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Granite.2.upper,NA,water_sierra,NA,water,1440,,15_W21,3.52,7,C02,1,,,C,2
+CBW_YoTB_602,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Helen,NA,water_sierra,NA,water,600,,16_W21,too low,7,C03,1,,,C,3
+CBW_YoTB_603,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Wasco,NA,water_sierra,NA,water,600,,17_W21,0.47,7,C04,1,,,C,4
+CBW_YoTB_604,Zoop Microbiome,Sierra Nevada,2021,7/17/21,Cathedral.1.lower,NA,water_sierra,NA,water,360,,18_W21,3.74,7,C05,1,Cathedral 1 lower,,C,5
+CBW_YoTB_605,Zoop Microbiome,Sierra Nevada,2021,7/22/21,Gaylor Lower,NA,water_sierra,NA,water,1500,,19_W21,0.57,7,C06,1,,,C,6
+CBW_YoTB_606,Zoop Microbiome,Sierra Nevada,2021,7/20/21,Elizabeth,NA,water_sierra,NA,water,600,,20_W21,0.228,7,C07,2,,,C,7
+CBW_YoTB_607,Zoop Microbiome,Sierra Nevada,2021,7/11/21,PollyDomeOne,NA,water_sierra,NA,water,360,,21_W21,2.48,7,C08,2,,,C,8
+CBW_YoTB_608,Zoop Microbiome,Sierra Nevada,2021,7/7/21,Eastern Brook,NA,water_sierra,NA,water,900,,23_W21,1.45,7,C09,2,,,C,9
+CBW_YoTB_609,Zoop Microbiome,Sierra Nevada,2021,7/21/21,Cascade,NA,water_sierra,NA,water,720,,24_W21,1.72,7,C10,2,,,C,10
+CBW_YoTB_610,Zoop Microbiome,Sierra Nevada,2021,7/15/21,Gardisky,NA,water_sierra,NA,water,1260,,25_W21,1.38,7,C11,2,,,C,11
+CBW_YoTB_611,Zoop Microbiome,Sierra Nevada,2021,7/5/21,Steelhead,NA,water_sierra,NA,water,1875,,26_W21,5.04,7,C12,2,,,C,12
+CBW_YoTB_612,Zoop Microbiome,Sierra Nevada,2021,7/7/21,Serene,NA,water_sierra,NA,water,1200,,27_W21,2.36,7,D01,2,,,D,1
+CBW_YoTB_613,Zoop Microbiome,Sierra Nevada,2021,7/18/21,Spillway,NA,water_sierra,NA,water,600,,28_W21,too low,7,D02,2,,,D,2
+CBW_YoTB_614,Zoop Microbiome,Sierra Nevada,2021,NA,negative.control,NA,negative.control,negative.control,ext.blank,NA,NA,B_2021,too low,7,D03,2,<< negative.control,,D,3
+CBW_YoTB_615,Water Time Series,Sierra Nevada,2017,8/16/17,Blue,NA,water_sierra,NA,water,1750,,17_W17,3.38,7,D04,2,,,D,4
+CBW_YoTB_616,Water Time Series,Sierra Nevada,2016,8/6/16,Spillway,NA,water_sierra,NA,water,1349,,15_W16,0.224,7,D05,2,,,D,5
+CBW_YoTB_617,Water Time Series,Sierra Nevada,2017,9/1/17,Sunrise2,NA,water_sierra,NA,water,530,,11_W17,too low,7,D06,2,,,D,6
+CBW_YoTB_618,Water Time Series,Sierra Nevada,2019,7/26/19,Elizabeth,NA,water_sierra,NA,water,750,,16_W19,0.696,7,D07,2,,,D,7
+CBW_YoTB_619,Water Time Series,Sierra Nevada,2019,7/28/19,May,NA,water_sierra,NA,water,730,,08_W19,2.3,7,D08,2,,,D,8
+CBW_YoTB_620,Water Time Series,Sierra Nevada,2019,8/2/21,Cathedral.2.upper,NA,water_sierra,NA,water,1400,,09_W16,0.31,7,D09,2,,,D,9
+CBW_YoTB_621,Water Time Series,Sierra Nevada,2017,NA,negative.control,NA,negative.control,negative.control,ext.blank,NA,NA,24_W17,too low,7,D10,2,<< negative.control,,D,10
+CBW_YoTB_622,Water Time Series,Sierra Nevada,2016,8/16/19,PollyDomeOne,NA,water_sierra,NA,water,1316,,14_W16,0.22,7,D11,2,,,D,11
+CBW_YoTB_623,Trout Microbiome,Sierra Nevada,2022,8/19/22,Wasco,NA,trout_sierra,trout,fish,1,,TR_186,2.4,7,D12,2,,,D,12
+CBW_YoTB_624,Trout Microbiome,Sierra Nevada,2022,7/1/22,Gaylor.2.upper,NA,trout_sierra,trout,fish,1,,TR_087,0.74,7,E01,2,,,E,1
+CBW_YoTB_625,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Wasco,05_W22,water_sierra,NA,water,240,9/13/22,05_W22,2.92,7,E02,2,<< long term,,E,2
+CBW_YoTB_626,Trout Microbiome,Sierra Nevada,2021,7/24/21,Gardisky,NA,trout_sierra,trout,fish,1,,TR_010,5.32,7,E03,2,,,E,3
+CBW_YoTB_627,Trout Microbiome,Sierra Nevada,2021,8/1/21,Wasco,NA,trout_sierra,trout,fish,1,,TR_049,2.02,7,E04,2,,,E,4
+CBW_YoTB_628,Trout Microbiome,Sierra Nevada,2021,8/1/21,Wasco,NA,trout_sierra,trout,fish,1,,TR_052,1.42,7,E05,2,,,E,5
+CBW_YoTB_629,Trout Microbiome,Sierra Nevada,2021,7/24/21,Gardisky,NA,trout_sierra,trout,fish,1,,TR_001,2.58,7,E06,2,,,E,6
+CBW_YoTB_630,Trout Microbiome,Sierra Nevada,2022,8/6/22,Sunrise3,NA,trout_sierra,trout,fish,1,,TR_150,13.2,7,E07,2,,,E,7
+CBW_YoTB_631,Trout Microbiome,Sierra Nevada,2022,7/2/22,Helen,NA,trout_sierra,trout,fish,1,,TR_112,0.618,7,E08,2,,,E,8
+CBW_YoTB_632,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor.2.upper,01_W22,water_sierra,NA,water,600,9/13/22,01_W22,1.79,7,E09,2,<< long term,,E,9
+CBW_YoTB_633,Zoop Microbiome,Sierra Nevada,2022,7/26/22,Secret,02_W22,water_sierra,NA,water,720,9/13/22,02_W22,5.32,7,E10,2,<< long term,,E,10
+CBW_YoTB_634,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Cascade,03_W22,water_sierra,NA,water,600,9/13/22,03_W22,4.22,7,E11,2,<< long term,,E,11
+CBW_YoTB_635,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.1.lower,04_W22,water_sierra,NA,water,300,9/13/22,04_W22,2.36,7,E12,2,<< long term,,E,12
+CBW_YoTB_636,Trout Microbiome,Sierra Nevada,2021,7/29/21,Gaylor.2.upper,NA,trout_sierra,trout,fish,1,,TR_036,1.16,7,F01,2,,,F,1
+CBW_YoTB_637,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeTwo,06_W22,water_sierra,NA,water,180,9/13/22,06_W22,0.11,7,F02,2,<< long term,,F,2
+CBW_YoTB_638,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.1.lower,07_W22,water_sierra,NA,water,600,9/13/22,07_W22,4.72,7,F03,2,<< long term,,F,3
+CBW_YoTB_639,Zoop Microbiome,Sierra Nevada,2022,8/8/22,Granite.2.upper,10_W22,water_sierra,NA,water,600,9/13/22,10_W22,2.32,7,F04,2,<< long term,,F,4
+CBW_YoTB_640,Zoop Microbiome,Sierra Nevada,2022,7/30/22,Lukens,11_W22,water_sierra,NA,water,360,9/13/22,11_W22,3.22,7,F05,2,<< long term,,F,5
+CBW_YoTB_641,Zoop Microbiome,Sierra Nevada,2022,7/27/22,Gaylor Lower,12_W22,water_sierra,NA,water,540,9/13/22,12_W22,4.96,7,F06,2,<< long term,,F,6
+CBW_YoTB_642,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise2,13_W22,water_sierra,NA,water,240,9/13/22,13_W22,3.1,7,F07,2,<< long term,,F,7
+CBW_YoTB_643,Zoop Microbiome,Sierra Nevada,2022,8/1/22,Greenstone,14_W22,water_sierra,NA,water,420,9/13/22,14_W22,5.48,7,F08,2,<< long term,,F,8
+CBW_YoTB_644,Zoop Microbiome,Sierra Nevada,2022,7/30/22,May Pond,15_W22,water_sierra,NA,water,230,9/13/22,15_W22,1.28,7,F09,2,<< long term,,F,9
+CBW_YoTB_645,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeOne,16_W22,water_sierra,NA,water,300,9/13/22,16_W22,too low,7,F10,2,<< long term,,F,10
+CBW_YoTB_646,Zoop Microbiome,Sierra Nevada,2022,8/11/22,Steelhead ,17_W22,water_sierra,NA,water,420,9/13/22,17_W22,1.54,7,F11,2,<< long term,,F,11
+CBW_YoTB_647,Zoop Microbiome,Sierra Nevada,2022,8/10/22,Cathedral.2.upper,18_W22,water_sierra,NA,water,240,9/13/22,18_W22,3.16,7,F12,2,<< long term,,F,12
+CBW_YoTB_648,Zoop Microbiome,Sierra Nevada,2022,7/31/22,Sunrise3,19_W22,water_sierra,NA,water,360,9/13/22,19_W22,4.02,7,G01,2,<< long term,,G,1
+CBW_YoTB_649,Zoop Microbiome,Sierra Nevada,2022,7/2/22,Helen ,20_W22,water_sierra,NA,water,600,9/13/22,20_W22,10.1,7,G02,2,<< long term,,G,2
+CBW_YoTB_650,Zoop Microbiome,Sierra Nevada,2022,7/23/22,Elizabeth,21_W22,water_sierra,NA,water,480,9/13/22,21_W22,3.56,7,G03,2,<< long term,,G,3
+CBW_YoTB_651,Zoop Microbiome,Sierra Nevada,2022,8/7/22,PollyDomeThree,22_W22,water_sierra,NA,water,100,9/13/22,22_W22,0.292,7,G04,2,<< long term,,G,4
+CBW_YoTB_652,Zoop Microbiome,Sierra Nevada,2022,7/2/22,Spillway ,23_W22,water_sierra,NA,water,480,9/13/22,23_W22,6.08,7,G05,2,<< long term,,G,5
+CBW_YoTB_653,Zoop Microbiome,Sierra Nevada,2022,8/6/22,Sunrise1,24_W22,water_sierra,NA,water,240,9/13/22,24_W22,4.32,7,G06,2,<< long term,,G,6
+CBW_YoTB_654,Zoop Microbiome,Sierra Nevada,2022,8/5/22,Convict,37_W22,water_sierra,NA,water,900,9/15/22,37_W22,1.58,7,G07,2,<< Maddy's Time 4,,G,7
+CBW_YoTB_655,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Eastern Brook,38_W22,water_sierra,NA,water,550,9/15/22,38_W22,1.81,7,G08,2,<< Maddy's Time 4,,G,8
+CBW_YoTB_656,Zoop Microbiome,Sierra Nevada,2022,8/9/22,Serene,39_W22,water_sierra,NA,water,350,9/15/22,39_W22,0.696,7,G09,2,<< Maddy's Time 4,,G,9
+CBW_YoTB_657,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Cooney,40_W22,water_sierra,NA,water,900,9/15/22,40_W22,3.6,7,G10,2,<< Maddy's Time 4,,G,10
+CBW_YoTB_658,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Blue,41_W22,water_sierra,NA,water,900,9/15/22,41_W22,too low,7,G11,2,<< Maddy's Time 4,,G,11
+CBW_YoTB_659,Zoop Microbiome,Sierra Nevada,2022,8/4/22,Virginia,42_W22,water_sierra,NA,water,900,9/15/22,42_W22,3.32,7,G12,2,<< Maddy's Time 4,,G,12
+CBW_YoTB_660,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,49_W22,negative.control,negative.control,ext.blank,NA,9/15/22,49_W22,too low,7,H01,2,<< negative.control,,H,1
+CBW_YoTB_661,Zoop Microbiome,Sierra Nevada,2022,6/30/22,May ,54_W22,water_sierra,NA,water,720,9/27/22,54_W22,3.84,7,H02,2,<< long term,,H,2
+CBW_YoTB_662,Zoop Microbiome,Sierra Nevada,2022,7/20/22,Gardisky ,55_W22,water_sierra,NA,water,1200,9/27/22,55_W22,8.28,7,H03,2,<< long term,,H,3
+CBW_YoTB_663,Zoop Microbiome,Sierra Nevada,2022,NA,negative.control,58_W22,negative.control,negative.control,ext.blank,NA,9/27/22,58_W22,too low,7,H04,2,<< negative.control,,H,4
