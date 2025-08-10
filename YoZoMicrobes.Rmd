@@ -1,0 +1,1426 @@
+---
+title: "YoZoMicrobes"
+author: "CB Wall"
+date: "10/15/2023"
+output:
+  html_document:
+    code_folding: hide
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+editor_options: 
+  chunk_output_type: console
+---
+## Project overview
+
+```{r global options, results="hide", warning=FALSE, message=FALSE}
+if (!require('knitr')) install.packages('knitr'); library('knitr')
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.align='center')
+
+# load packages
+if (!require("pacman")) install.packages("pacman") # for rapid install if not in library
+
+devtools::install_github("benjjneb/dada2", ref="v1.20") # update to most recent dada2
+devtools::install_github("zdk123/SpiecEasi")
+
+
+pacman::p_load('knitr', 'microbiome', 'phyloseq', 'tidyr', 'tidyverse', 'knitr', 'magrittr', 'effects', 'devtools', 'stringi', 'dplyr', "ggplot2", "gridExtra", "dada2", "phyloseq", "vegan", "cowplot", 'doBy', 'ecodist', 'phyloseqCompanion', 'pairwiseAdonis', 'glue', 'geosphere', 'data.table', 'patchwork', 'car', 'ggcorrplot', 'FactoMineR', 'devtools', 'emmeans', 'rmarkdown', 'reshape', 'lattice',  'plyr', 'magrittr', 'factoextra', 'multcompView', 'decontam', 'factoextra', 'car', 'mia', 'ade4', 'fossil', 'picante', 'reshape', 'readr', 'corrr', 'Hmisc', "MASS", "FSA", "sciplot", "decontam","BiocManager", 'ggpubr', 'ggmap', "ggordiplots", "fossil", "igraph", "huge", "leaflet", "ggtree", "colorBlindness", "RColorBrewer","MicrobiotaProcess", "predict3d", "ggiraphExtra", "data.table", "betapart", "naniar", "rstatix", "ggnetworks", "intergraph")
+
+install_github("zdk123/SpiecEasi")
+library(SpiecEasi)
+```
+
+
+### Site Map
+```{r, site maps, fig.cap="**Figure 1**. Site map of the Eastern Sierra Nevada Mountains and sampling sites", fig.align='center', results='hide', eval=FALSE}
+
+# load data
+Yos.meta<-read.csv("data/YoZo.ecol.env.meta.csv")
+API<-read.csv("data/API_key.csv")
+API.key<-API[1,1]
+
+#quick map
+# ggplot(SNL.env, aes(x = longitude, y = latitude)) + coord_quickmap() + geom_point()
+
+######## using ggmap
+register_google(key=API.key)
+
+########
+#California Map
+########
+
+CA.map<-get_googlemap(center=c(-121, y = 37), zoom = 6, source="google", maptype="hybrid",
+                      style=c(feature="poi",element="labels",visibility="off")) 
+
+# "poi" is to remove places of interest from map, other options avaialble too...
+# no cities, roads, just "CA"...
+# style = 'feature:road|element:all|visibility:simplified&style=feature:administrative.locality|element:labels|visibility:off')
+# https://developers.google.com/maps/documentation/maps-static/styling#features
+
+CA.map_for_man <- ggmap(CA.map) +
+  geom_point(aes(x = -119, y = 38), pch=23,colour="black",fill="mediumseagreen", size = 3, stroke=0.5) +
+  xlab("longitude") + ylab("latitude") +
+ theme(text = element_text(size=6),
+       plot.margin = unit(c(0.2, 0.5, 0.2, 0.2), "cm")) 
+
+##########
+# site map
+##########
+Yos.rev=c(x=-119.25, y = 37.72)
+
+Yos.SNL<-get_map(Yos.rev, 
+                      zoom=9, 
+                      scale = 2, 
+                      maptype= "satellite",
+                      source="google", extent= "device", legend="topright")
+
+## sites lat long
+lat.long<-Yos.meta %>%
+  dplyr::select(Lake, latitude, longitude, elevation..m)
+
+lat.long<- lat.long %>% distinct()
+
+Yos.sites.21.22<-
+  ggmap(Yos.SNL)+
+  geom_point(aes(x=longitude, y=latitude), data=lat.long, alpha=0.6, color="black", pch=21, size=4, bg="dodgerblue")+
+  #geom_point(aes(x=longitude, y=latitude), data=lat.long, alpha=1, color="black", size=2, pch=21)+
+  labs(x="longitude", y="latitude") +
+  theme(text = element_text(size=6),
+       plot.margin = unit(c(0.2, 0.5, 0.2, 0.2), "cm"))
+
+###
+
+site.plots<-plot_grid(CA.map_for_man, Yos.sites.21.22, 
+          labels=c('A', 'B'), label_size=8, hjust=-1, vjust= 6, ncol=2, nrow=1)
+
+
+### export it
+pdf(file= "figures/Yos.sites_21.22.pdf", height=4, width=8)
+site.plots
+dev.off()
+```
+
+### Environmental plots
+plots of nutrient data
+```{r env plots}
+#### Load IN FULL METADATA
+full.env.meta<-read.csv("data/YoZo.ecol.env.meta.csv")
+
+# remove outliers
+env.met.trimmed<-full.env.meta[!(full.env.meta$DOC..mg.L> 10),]
+env.met.trimmed<-env.met.trimmed[!(env.met.trimmed$chla..ug.L> 4),]
+
+# Temperature
+temp.plot<- ggplot(env.met.trimmed, aes(x=temp..C, y=elevation..m, color=Year))+
+  geom_point() +
+  stat_smooth(method = "lm", se = FALSE)+
+  ylab("Elevation (m)") + xlab("Temperature (C)") + theme_classic()
+
+temp.plot
+dev.copy(pdf, "figures/env/temp.elev.pdf", height=5, width=4)
+dev.off()
+
+# Chla
+chl.plot.trimmed<- ggplot(env.met.trimmed, aes(x=chla..ug.L, y=elevation..m, color=Year))+
+  geom_point() +
+  stat_smooth(method = "lm", se = FALSE)+
+  ylab("Elevation (m)") + xlab("chl (ug/L)") + theme_classic()
+
+# TDN hist
+TDN.hist<-ggplot(env.met.trimmed, aes(x=TDN..ug.L))+
+  geom_histogram(fill="brown", alpha=0.5) + theme_classic() + geom_density(aes(y=120*..count..), colour="coral", adjust=4)+ ylab("count") + xlab("Total Nitrogen (ug/L)")
+
+# chla his
+chl.hist<-ggplot(env.met.trimmed, aes(x=chla..ug.L))+
+  geom_histogram(fill="mediumseagreen", alpha=0.5) + theme_classic() + geom_density(aes(y=0.35*..count..), colour="seagreen", adjust=4) + ylab("count") + xlab("Chlorophyll (ug/L)")
+
+# DOC hist
+DOC.hist<-ggplot(env.met.trimmed, aes(x=DOC..mg.L))+
+  geom_histogram(fill="dodgerblue", alpha=0.6) + theme_classic() + geom_density(aes(y=1.1*..count..), colour="blue", adjust=4) + ylab("count") + xlab("Dissolved organic carbon (mg/L)")
+
+# pooled plots
+env.plots<-plot_grid(chl.hist, TDN.hist, DOC.hist, ncol=1)
+env.plots
+dev.copy(pdf, "figures/env/env.plots.pdf", height=7, width=5)
+dev.off()
+```
+
+### Bioinformatics
+**TSCC DADA pipeline notes** 
+
+(1) removed NAs, chloroplasts and mitochondria.  
+ 
+- remove NAs in taxonomic table, leaving only Archaea and Bacteria.  
+- did this by `subset_taxa(ps, !is.na(Phylum) & !Phylum %in% c("", "uncharacterized"))`  
+  
+- remove all Chloropoasts and Mitochondria  
+- did this by `subset_taxa(ps, !is.na(Phylum) & !Phylum %in% c("", "Chloroplast"))` 
+- and... `subset_taxa(ps, Family!= "Mitochondria" | is.na(Family) & Class!="Chloroplast" | is.na(Class))`   
+- and... `subset_taxa(ps.prune, Order!="Chloroplast"| is.na(Class))`
+
+(2) remove low abundance taxa
+
+- removed samples not in > 1 sample. 
+- did this by `prune_taxa(taxa_sums(ps.noncontam.controls.out) > 1, ps.noncontam.controls.out) `. 
+
+(3) remove samples with < 100 reads. 
+
+- did this by `prune_samples(sample_sums(ps.prune) > 100, ps.prune)`
+
+
+### Phyloseq & Metadata smithing
+```{r}
+# ps.prune is the final phyloseq object from pipeline, can load it in here...
+
+ps.prune<-readRDS("output/TSCC_output/ps.prune.RDS")
+# 16273 taxa and 647 samples
+
+# chloroplasts sneaking in under Order in some cyanobacteria, looks good @ 14029 ASVs
+ps.prune <- subset_taxa(ps.prune, Order!="Chloroplast"| is.na(Class))
+
+# make sure any ASVs in the data that not in > 1 sample, removed
+ps.prune <- prune_taxa(taxa_sums(ps.prune) > 1, ps.prune) 
+
+###########  inspect
+df.SEQ <- as.data.frame(sample_data(ps.prune)) # Put sample_data into a ggplot-friendly data.frame
+df.SEQ$LibrarySize <- sample_sums(ps.prune) # this is the # of reads
+df.SEQ <- df.SEQ[order(df.SEQ$LibrarySize),]
+df.SEQ$Index <- seq(nrow(df.SEQ))
+
+# remove a few zoop. groups: 'white worm' (insect larvae), and asplanchna (rotifer)
+# 636 samples
+ps.prune.zoops<- subset_samples(ps.prune, 
+                          Functional.group=="cladocera" | 
+                          Functional.group=="copepoda" | 
+                          Functional.group=="water")
+
+# remove the few samples in for quality control among runs: fish, water from other years, 2016, 2017, 2019
+# 629 samples
+ps.zoop.wat<- subset_samples(ps.prune.zoops,
+                             Year=="2021" |
+                             Year=="2022")
+
+##### summarize
+table(phyloseq::tax_table(ps.zoop.wat)[, "Kingdom"], exclude = NULL) # 326 Archaea, 13703 Bacteria
+summarize_phyloseq(ps.zoop.wat)
+
+# check to ensure no change after subsetting
+ps.zoop.wat <- prune_taxa(taxa_sums(ps.zoop.wat) > 1, ps.zoop.wat) # 13329 in 629 samples
+
+
+
+############## metadata smithing
+# grab the metadata, this is also the same file that is found in "output/TSCC_output/sam_data.csv", but just to be sure... grab it from the object we're working with.
+metaD<-microbiome::meta(ps.zoop.wat)
+
+# adjust caps
+metaD<-metaD %>% 
+  dplyr::rename(
+    sample_type =Sample.type,
+    organism = Organism,
+    functional_group = Functional.group,
+    lake = Lake,
+    year = Year,
+    location = Location
+  )
+
+# remove any trailing spaces
+make.trim<-c("lake", "organism", "functional_group")
+metaD[make.trim]<-lapply(metaD[make.trim], trimws, "r")
+
+# correct NAs to be "water"
+metaD$organism<-as.character(metaD$organism) # need to do this to change the level
+metaD$organism[is.na(metaD$organism)] = "water"
+metaD$organism<-as.factor(metaD$organism) # back to factor
+
+# metadata error correction, sampleName YoTB_334 is "calanoid", but listed as cyclopoid
+metaD$organism[metaD$organism == "cyclopoid" & metaD$sampleNames=="YoTB_334"] <- "calanoid"
+
+# make a reduced group column
+metaD$genus.func.group<- dplyr::recode_factor(metaD$organism,
+                "calanoid blue" = "calanoid",
+                "calanoid large" = "calanoid",
+                "daphnia melanica" = "daphnia")
+
+metaD$genus.func.group<-factor(metaD$genus.func.group, 
+                               levels=c("daphnia", "ceriodaphnia", "bosmina", "holopedium", "polyphemus", 
+                                        "calanoid", "cyclopoid",
+                                        "water"))
+
+make.fac1<-c( "year", "sample_type", "lake", "functional_group", "genus.func.group")
+metaD[make.fac1]<-lapply(metaD[make.fac1], factor)
+
+# remove unwanted columns
+metaD<- metaD %>% select(-UCSD_metanames, -Project, -sample_control, -Qubit.DNA..ng.ul, -Miseq.ANL, -is.neg)
+
+# Make a data frame with a column for the read counts of each sample
+sample_sum_df<-as.data.frame(sample_sums(ps.zoop.wat))
+colnames(sample_sum_df)<-"read.sum"
+sample_sum_df$sampleNames<-rownames(sample_sum_df)
+
+# are row names the same? if so, add them in
+identical(rownames(sample_sum_df), rownames(metaD))
+metaD$read.sum<-sample_sum_df$read.sum
+
+
+#### Load IN ENV METADATA with dates, nutrients and lat-long, etc 
+full.env.meta<-read.csv("data/YoZo.ecol.env.meta.csv")
+
+# adjust caps
+full.env.meta<-full.env.meta %>% 
+  dplyr::rename(
+    location = Location,
+    latitude = Latitude,
+    longitude = Longitude,
+    date = Date, 
+    location = Location, 
+    lake = Lake,
+    year = Year
+  )
+
+# remove any trailing spaces
+make.trim2<-c("lake", "year")
+full.env.meta[make.trim2]<-lapply(full.env.meta[make.trim2], trimws, "r")
+
+#do as factor
+make.fac<-c("location", "year", "lake")
+full.env.meta[make.fac]<-lapply(full.env.meta[make.fac], factor)
+
+# make new factor
+full.env.meta$tree.line<-ifelse(full.env.meta$elevation..m > 2900, "aboveTL", "belowTL")
+
+################ merge the 2 dfs of metadata
+# environmental
+md.2021<-full.env.meta[(full.env.meta$year=="2021"),]
+md.2022<-full.env.meta[(full.env.meta$year=="2022"),]
+
+# sequence info
+seq.2021<- metaD[(metaD$year=="2021"),]
+seq.2022<- metaD[(metaD$year=="2022"),]
+
+# join by years
+full.metaD.21<-dplyr::left_join(seq.2021, md.2021, by=c("lake"))
+full.metaD.22<-dplyr::left_join(seq.2022, md.2022, by=c("lake"))
+
+# join all
+full.metaD<-as.data.frame(rbind(full.metaD.21, full.metaD.22))
+
+full.metaD<-full.metaD %>% 
+  dplyr::select(-year.y, -location.x) # remove duplicate column
+
+full.metaD<- full.metaD %>%
+  dplyr::rename(year = "year.x")  # rename duplicate column
+
+# reorder lakes my elevation
+full.metaD$lake <- as.factor(reorder(full.metaD$lake, full.metaD$elevation..m))
+
+# ready to get read back to phyloseq
+row.names(full.metaD)<-full.metaD$sampleNames # set rownames to import back to phyloseq
+
+# make a reduced group column
+full.metaD$lake<- dplyr::recode_factor(full.metaD$lake,
+                "Gaylor.1.lower"= "Gaylor1",
+                "Gaylor.2.upper" = "Gaylor2",
+                "Cathedral.1.lower" = "Cathedral1",
+                "Cathedral.2.upper" = "Cathedral2",
+                "Granite.1.lower" = "Granite1",
+                "Granite.2.upper" = "Granite2",
+                "Eastern Brook Pond A" = "Eastern Brook Pond")
+
+# load this in to make it the metadata for the phylseq object
+sample_data(ps.zoop.wat)<-full.metaD
+
+# export the df
+write.csv(full.metaD, "output/MetaD.seq.env.csv")
+
+##### FINAL object
+PS.fin<-ps.zoop.wat
+```
+
+Histogram of reads
+```{r histogram}
+##### Read counts and rarefaction curves
+
+#### # Histogram of sample read counts
+hist.depth<-ggplot(sample_sum_df, aes(x = read.sum)) + 
+  geom_histogram(color = "black", fill = "gold2", binwidth = 2500) +
+  ggtitle("Distribution of sample sequencing depth") + 
+  xlab("Read counts") +
+  theme(axis.title.y = element_blank()) + theme_classic() #geom_vline(xintercept=1000, lty=2)
+
+hist.depth
+dev.copy(pdf, "figures/hist.depth.pdf", height=4, width=5)
+dev.off()
+
+#########
+# inspect rarefaction curve
+OTU <- otu_table(PS.fin)
+class(OTU) <- "matrix" # as.matrix() will do nothing
+## you get a warning here, but this is what we need to have
+OTU <- t(OTU) # transpose observations to rows
+
+# version 1
+pdf(file="figures/rare.raw.pdf", height=6, width=10)
+rarecurve(OTU, step=50, cex=0.5, xlim=c(0,10000), ylim=(c(0,500)), label=FALSE)
+#abline(v = 5000, lty = "dotted", col="red", lwd=2)
+dev.off() 
+
+### richness by total # reads, strong relationship with increased richness as read # increases, but weak overall
+ggplot(data = data.frame("total_reads" =  phyloseq::sample_sums(ps.zoop.wat),
+                         "observed" = phyloseq::estimate_richness(ps.zoop.wat, measures = "Observed")[, 1]),
+       aes(x = total_reads, y = observed)) +
+  geom_point() +
+  geom_smooth(method="lm", se = FALSE) +
+  labs(x = "\nTotal Reads", y = "Observed Richness\n")
+```
+
+Explore ordination
+```{r exploring ordination and what to rarefy to, collapse=TRUE, fig.show='hide'}
+###### subset the PS objects for needs...
+# final and NOT rarefied data: 
+PS.fin
+
+# rarified to 1500 reads: PS.rar, then reclassify and reduce some taxa and name "PS.500'
+# 30 samples removedbecause they contained fewer reads than `sample.size`
+# 6713 OTUs were removed because they are no longer present
+PS.rar = rarefy_even_depth(PS.fin, rngseed=111, sample.size=1500, replace=F) 
+PS.rar <- prune_taxa(taxa_sums(PS.rar) >0, PS.rar) # remove those asvs no longer present
+
+table(sample_data(PS.rar)$sample_type) #284 samples: 56 water, 543 zooplankton, 6616 ASVs in 599 samples
+summarize_phyloseq(PS.rar)
+
+
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+# Compare full data, ordinations, and rarefied beta diversity
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+
+
+###################### full data, non-rarified DCA ###################### 
+# check beta diversity heterogeneity using DETRENDED CORRESPONDANCE ANALYSIS (DCA)
+# can be measured by DCA (the length of the first DCA axis is a measure of heterogeneity
+# DCA1 > 4 = the dataset is considered as heterogeneous and suitable for unimodal methods (RDA, CCA)
+# DCA1 < 3 = it can be considered as homogeneous, suitable for linear methods (PCA, RDA)
+# DCA1 =  3-4, both linear or unimodal methods are ok. After this decision, use either linear (PCA, RDA)
+
+#DCA.full<-ordinate(PS.fin, method='DCA') # DCA-axis1 length = 6
+#plot_ordination(PS.fin, DCA.full, color = "sample_type",  type='split')
+
+
+###################### full data, non-rarified PCoA ###################### 
+# distance based (db) PCoA (principal coordinate analysis)
+# PCoA is preferred if wanting to interpret the absolute distances between communities in different samples.
+PCoA.full <- ordinate(PS.fin, method = 'PCoA', distance = 'bray')
+plot_ordination(PS.fin, PCoA.full, color = "genus.func.group")
+plot_ordination(PS.fin, PCoA.full, color = "year")
+
+
+###################### transformation based ordination (tb), ###################### 
+# bypass the hetero/homogeneity issue, transform  species composition data by Hellinger transformation
+# use either unconstrained (tb-PCA) or constrained (tb-RDA) approach
+# Hellinger transformation in un-even community datasets better linearizes the distances among sites 
+# ... and reduce the effect of dominant species in the site dissimilarity
+
+####  tb-PCA, 
+# Principal Components Analysis is an unconstrained method that does not use a distance matrix. 
+# PCA directly uses the (transformed) microbial variables
+# package will hellinger transform
+
+library("MicrobiotaProcess") # note this has issues with phyloseq so need to unload it after
+PCA.hell.nonrar <- get_pca(PS.fin, method="hellinger")
+PCA.hell.nonrar.plot <- ggordpoint(PCA.hell.nonrar, biplot=TRUE, 
+                      speciesannot=TRUE,
+                      factorNames=c("genus.func.group"), ellipse=TRUE)
+
+#### ####  ####  rarefied, manually hellinger transformed: Constrained ordination (tb-RDA)
+# transform the rarified (500 reads) data and Hellinger transform
+# convert the data to proportions and then take the square root
+# do RDA/PCA  here, since non-distance based ordination
+
+PS.rar.hell.test = transform_sample_counts(PS.rar, function(x) sqrt(x / sum(x)))
+ord.hell.RDA <- ordinate(PS.rar.hell.test, method = 'RDA')
+
+Hell.tb.RDA<- plot_ordination(
+  physeq=PS.rar.hell.test, 
+  ordination = ord.hell.RDA) +
+  geom_point(aes(color = genus.func.group), size = 1.5) +    
+  scale_color_manual(values=c("coral", "violet", "goldenrod2", "darkolivegreen3", "seagreen",
+                              "darkslategray3","thistle", "dodgerblue")) +
+  stat_ellipse(level=0.95, linetype = 2, aes(color=genus.func.group)) +
+  ggtitle("ALL taxa: tb-RDA (Hell-500)") +
+  theme_classic() 
+
+#############################
+
+# what samples have low reads
+plot_ordination(PS.fin, PCoA.full, shape = "sample_type") +
+  geom_point(aes(color = read.sum > 1500))
+
+Rare.culling<-plot_ordination(PS.fin, PCoA.full, color = "genus.func.group") +
+  geom_point(aes(shape = read.sum > 1500, size= read.sum > 1500)) +
+  scale_size_manual(values= c(6,2)) +
+  scale_shape_manual(values=c(1, 16))+
+  scale_color_manual(values=c("coral", "violet", "goldenrod2", "darkolivegreen3", "seagreen",
+                              "darkslategray3","thistle", "dodgerblue")) +
+  ggtitle("Samples culled by rarefaction") + theme_classic()
+
+
+# plot the PCoA for non-rarified
+Non.rar.PCoA<-plot_ordination(
+  physeq = PS.fin,                                                   
+  ordination = PCoA.full) +                                                
+  geom_point(aes(color = genus.func.group), size = 2) +    
+  stat_ellipse(level=0.95, linetype = 2, aes(color=genus.func.group)) +
+  scale_color_manual(values=c("coral", "violet", "goldenrod2", "darkolivegreen3", "seagreen",
+                              "darkslategray3","thistle", "dodgerblue")) +
+  ggtitle("ALL taxa-all data") +
+  theme_classic() 
+
+###### if rarefied in a distance based approach, PCoA
+ord.rar <- ordinate(PS.rar, method = 'PCoA', distance = 'bray')
+plot_ordination(PS.rar, ord.rar, color = "genus.func.group")
+
+Rar.PCoA<- plot_ordination(
+  physeq = PS.rar,                                                   
+  ordination = ord.rar) +                                                
+  geom_point(aes(color = genus.func.group), size = 2) +    
+  stat_ellipse(level=0.95, linetype = 2, aes(color=genus.func.group)) +
+  scale_color_manual(values=c("coral", "violet", "goldenrod2", "darkolivegreen3", "seagreen",
+                              "darkslategray3","thistle", "dodgerblue")) +
+  ggtitle("ALL taxa- 1500reads") +
+  theme_classic() 
+
+
+
+########### PCoA - unifrac/weighted
+# distance based ordination on rarified data
+# UniFrac is a β-diversity measure that uses phylogenetic information to compare environmental samples
+# Unweighted UniFrac is more sensitive to differences in low-abundance features
+# Weighted UniFrac for abundance and phylogeny, impact of low-abundance features is diminished, is useful for examining differences in community structure
+
+# make phylogenetic tree and add to phyloseq if wanting to do unifrac weight/unweighted
+detach("package:MicrobiotaProcess", unload = TRUE)
+library("ape")
+random_tree = rtree(ntaxa(PS.rar), rooted=TRUE, tip.label=taxa_names(PS.rar))
+
+# add in
+phy_tree(PS.rar)<-random_tree
+
+# unweighted since we have low abundance taxa
+ord.unif <- ordinate(PS.rar, method = 'PCoA', distance ="unifrac")
+
+PCoA.rar.UnW.unif<- plot_ordination(
+  physeq=PS.rar, 
+  ordination = ord.unif) +
+  geom_point(aes(color = genus.func.group), size = 2) +    
+  stat_ellipse(level=0.95, linetype = 2, aes(color=genus.func.group)) +
+  scale_color_manual(values=c("coral", "violet", "goldenrod2", "darkolivegreen3", "seagreen",
+                              "darkslategray3","thistle", "dodgerblue")) +
+  ggtitle("ALL taxa: PCoA 1500.UnW.unifrac") +
+  theme_classic() 
+
+# weighted for dominant taxa
+ord.wunif <- ordinate(PS.rar, method = 'PCoA', distance ="wunifrac")
+
+PCoA.rar.w.unif<- plot_ordination(
+  physeq=PS.rar, 
+  ordination = ord.wunif) +
+  geom_point(aes(color = genus.func.group), size = 2) +    
+  stat_ellipse(level=0.95, linetype = 2, aes(color=genus.func.group)) +
+  scale_color_manual(values=c("coral", "violet", "goldenrod2", "darkolivegreen3", "seagreen",
+                              "darkslategray3","thistle", "dodgerblue")) +
+  ggtitle("ALL taxa: PCoA 1500.W.unifrac") +
+  theme_classic() 
+
+## inspect sample size effects for samples with more or less than average # individuals
+
+ps.prune.zoops<- subset_samples(PS.fin, 
+                          sample_type=="zooplankton")
+
+PCoA.zoop <- ordinate(ps.prune.zoops, method = 'PCoA', distance = 'bray')
+
+Rare.number.org<-plot_ordination(ps.prune.zoops, PCoA.zoop, color = "Number.of.individuals.or.ml") +
+  geom_point(aes(color= Number.of.individuals.or.ml, shape=functional_group), size=2) +
+  scale_colour_gradient(low = "gold", high = "dodgerblue") +
+  scale_shape_manual(values=c(16,17,18,1,2,3,4))+
+  ggtitle("Organism number rarefaction") + theme_classic() 
+Rare.number.org$layers <- Rare.number.org$layers[-1]
+```
+
+```{r rel abund RARE}
+
+#relative abundance with rarified data
+ps.ord <- tax_glom(PS.rar, "Class") # give taxonomic summary to this level
+ps.relab<- transform_sample_counts(ps.ord, function(x) x / sum(x))
+ps.relab.org <- merge_samples(ps.relab, "genus.func.group") # merge to get mean across Organisms
+ps.relab.org2 <- transform_sample_counts(ps.relab.org, function(x) x / sum(x))
+
+# now that it is summarized by Organism,
+plot_bar(ps.relab.org2, fill="Class") # relative abundance of data
+dev.copy(pdf, "figures/Relab.rar.class.pdf", height=12, width=20)
+dev.off() 
+
+###
+# inspect just the most abundant groups at CLASS level
+df.relab<-psmelt(ps.relab.org2)
+
+# top phylum
+top_phylum <- df.relab %>%
+    group_by(genus.func.group, Phylum) %>%
+     dplyr::summarize(Mean = mean(Abundance)) %>%
+    arrange(-Mean)
+top_phylum
+
+### top 20 class
+top20 <- top_phylum$Phylum[1:20]
+df0 <- df.relab %>%
+    mutate(Phylum = fct_other(Phylum, top20))
+
+top20.rel.abund.phyl<-ggplot(df0, aes(Sample, Abundance, fill = Phylum)) +
+  geom_col() +
+  ylab("Relative Abundance") +
+  geom_bar(colour="black", stat="identity", linewidth=0.2)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+
+## export
+top20.rel.abund.phyl
+dev.print(pdf, "figures/Relab.rar.20.phyl.pdf", height=6, width=7)
+dev.off()
+
+################ top Classes
+# top class
+top_class <- df.relab %>%
+    group_by(genus.func.group, Class) %>%
+    dplyr::summarize(Mean = mean(Abundance)) %>%
+    arrange(-Mean)
+top_class
+
+### top 20 class
+top20 <- top_class$Class[1:20]
+df0 <- df.relab %>%
+    mutate(Class = fct_other(Class, top20))
+
+top20.rel.abund.class<-ggplot(df0, aes(Sample, Abundance, fill = Class)) +
+  geom_col() +
+  ylab("Relative Abundance") +
+  geom_bar(colour="black", stat="identity", size=0.2)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+
+## export
+top20.rel.abund.class
+dev.print(pdf, "figures/Relab.rar.20.class.pdf", height=6, width=7)
+dev.off()
+```
+
+```{r rel abund bar hellinger}
+############# if using hellinger...
+ps.hell = transform_sample_counts(PS.fin, function(x) sqrt(x / sum(x)))
+
+ps <- tax_glom(ps.hell, "Order")
+ps0 <- transform_sample_counts(ps, function(x) x / sum(x))
+ps1 <- merge_samples(ps0, "genus.func.group") # merge to get mean across Organisms
+ps2 <- transform_sample_counts(ps1, function(x) x / sum(x))
+
+## export
+plot_bar(ps2, fill="Phylum") # relative abundance of hellinger transformed data
+dev.print(pdf, "figures/Relab.hell.pdf", height=6, width=20)
+dev.off() 
+
+# inspect just the most abundant groups
+df.relab.hell<-psmelt(ps2)
+
+# top phyla 
+top_phyla.hell <- df.relab.hell %>%
+    group_by(genus.func.group, Phylum) %>%
+    dplyr::summarize(Mean = mean(Abundance)) %>%
+    arrange(-Mean)
+top_phyla.hell
+
+### top 20 phyla
+top20.hell <- top_phyla.hell$Phylum[1:20]
+df0.hell <- df.relab.hell %>%
+    mutate(Phylum = fct_other(Phylum, top20.hell))
+
+top20.rel.abund.hell<-ggplot(df0.hell, aes(Sample, Abundance, fill = Phylum)) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+
+## export
+top20.rel.abund.hell
+dev.print(pdf, "figures/Relab.20.hell.pdf", height=6, width=7)
+dev.off() 
+```
+
+```{r distance decay dfs}
+library("fossil")
+
+# calculate bray-curtis distance 
+# Extract abundance matrix from the phyloseq object
+otu.hell<-as.data.frame(otu_table(ps.hell))
+
+# abundance data frame - bray curtis dissimilarity
+all.otu.dist  = phyloseq::distance(ps.hell, "bray")
+
+#longitude and latitude 
+geo = cbind(sample_data(ps.hell)$longitude, sample_data(ps.hell)$latitude)
+
+# geographic data frame in km
+all.geo = earth.dist(geo)
+
+#abundance vs geographic mantel
+# + 1 for distance so that samples at 0 distance can be log transformed
+# 'dist.abund.all' is the bray-curtis dissimilarity matrix
+abund_geo  = mantel(log(all.geo+1), all.otu.dist, permutations = 9999)
+abund_geo # very significant (p=0.0001), r = 0.2711
+
+
+############ subset data for all, water, cladocera, copepoda
+water.otu = subset_samples(ps.hell, organism=="water")
+cladocera.otu = subset_samples(ps.hell, functional_group=="cladocera")
+copepoda.otu = subset_samples(ps.hell, functional_group=="copepoda")
+holop.otu = subset_samples(ps.hell, genus.func.group=="holopedium")
+daph.otu = subset_samples(ps.hell, genus.func.group=="daphnia")
+bosm.otu = subset_samples(ps.hell, genus.func.group=="bosmina") # includes daphnia spp. and daphnia melania
+ceriod.otu = subset_samples(ps.hell, organism=="ceriodaphnia")
+calan.otu = subset_samples(ps.hell, genus.func.group=="calanoid")
+cyclo.otu = subset_samples(ps.hell, genus.func.group=="cyclopoid")
+polyph.otu = subset_samples(ps.hell, genus.func.group=="polyphemus")
+
+#generate dissimlarity matrix
+water.otu.dist = phyloseq::distance(water.otu, "bray") 
+cladoc.otu.dist = phyloseq::distance(cladocera.otu, "bray") 
+copepo.otu.dist = phyloseq::distance(copepoda.otu, "bray") 
+holop.otu.dist = phyloseq::distance(holop.otu, "bray") 
+daph.otu.dist = phyloseq::distance(daph.otu, "bray") 
+bosm.otu.dist = phyloseq::distance(bosm.otu, "bray") 
+ceriod.otu.dist = phyloseq::distance(ceriod.otu, "bray") 
+calan.otu.dist = phyloseq::distance(calan.otu, "bray") 
+cyclo.otu.dist = phyloseq::distance(cyclo.otu, "bray") 
+polyph.otu.dist = phyloseq::distance(polyph.otu, "bray")
+
+# distance
+water.geo = cbind(sample_data(water.otu)$longitude, sample_data(water.otu)$latitude)
+cladoc.geo = cbind(sample_data(cladocera.otu)$longitude, sample_data(cladocera.otu)$latitude)
+copepo.geo = cbind(sample_data(copepoda.otu)$longitude, sample_data(copepoda.otu)$latitude)
+holop.geo = cbind(sample_data(holop.otu)$longitude, sample_data(holop.otu)$latitude)
+daph.geo = cbind(sample_data(daph.otu)$longitude, sample_data(daph.otu)$latitude)
+bosm.geo = cbind(sample_data(bosm.otu)$longitude, sample_data(bosm.otu)$latitude)
+ceriod.geo = cbind(sample_data(ceriod.otu)$longitude, sample_data(ceriod.otu)$latitude)
+calan.geo = cbind(sample_data(calan.otu)$longitude, sample_data(calan.otu)$latitude)
+cyclo.geo = cbind(sample_data(cyclo.otu)$longitude, sample_data(cyclo.otu)$latitude)
+polyph.geo = cbind(sample_data(polyph.otu)$longitude, sample_data(polyph.otu)$latitude)
+
+#geodist, in km
+water.geodist = earth.dist(water.geo)
+cladoc.geodist = earth.dist(cladoc.geo)
+copepo.geodist = earth.dist(copepo.geo)
+holop.geodist = earth.dist(holop.geo)
+daph.geodist = earth.dist(daph.geo)
+bosm.geodist = earth.dist(bosm.geo)
+ceriod.geodist = earth.dist(ceriod.geo)
+calan.geodist = earth.dist(calan.geo)
+cyclo.geodist = earth.dist(cyclo.geo)
+polyph.geodist = earth.dist(polyph.geo)
+
+# mantel test
+water_mantel = mantel(log(water.geodist+1),log(water.otu.dist), permutations= 999) # signif, p = 0.001, r=0.420
+cladoc_mantel = mantel(log(cladoc.geodist+1),log(cladoc.otu.dist), permutations= 999) # signif, p = 0.001, r=0.278
+copepo_mantel = mantel(log(copepo.geodist+1),log(copepo.otu.dist), permutations= 999) # signif, p = 0.001, r=0.430
+holop_mantel = mantel(log(holop.geodist+1),log(holop.otu.dist), permutations= 999) # signif, p = 0.001, r=0.615
+daph_mantel = mantel(log(daph.geodist+1),log(daph.otu.dist), permutations= 999) # signif, p = 0.001, r=0.4667
+bosm_mantel = mantel(log(bosm.geodist+1),log(bosm.otu.dist), permutations= 999) # signif, p = 0.001, r=0.832
+ceriod_mantel = mantel(log(ceriod.geodist+1),log(ceriod.otu.dist), permutations= 999) # signif, p = 0.001, r=0.667
+calan_mantel = mantel(log(calan.geodist+1),log(calan.otu.dist), permutations= 999) # signif, p = 0.001, r=0.436
+cyclo_mantel = mantel(log(cyclo.geodist+1),log(cyclo.otu.dist), permutations= 999) # signif, p = 0.001, r=0.641
+polyph_mantel = mantel(log(polyph.geodist+1),log(polyph.otu.dist), permutations= 999) # signif, p = 0.001, r=0.645
+
+
+###### new dataframe for plotting
+##### all
+all.geomdist.df<-data.frame(Distance=all.geo[lower.tri(all.geo)],
+                  BrayCurtis= all.otu.dist[lower.tri(all.otu.dist)])
+
+# decay formatting
+decay.fig.format<- theme(plot.title = element_text(size=10, hjust = 0.5),
+        axis.text.x=element_text(colour="black",size=7), 
+        axis.text.y=element_text(colour="black",size=7),
+        axis.title=element_text(colour="black",size=9),
+        legend.title=element_text(colour="black",size=7,face="bold"),
+        legend.text=element_text(colour="black",size=7),
+        panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+        panel.background=element_blank())
+
+
+#Generate plots for all samples combined
+all_dist_plot<- ggplot(all.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="gray20") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite ALL")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+  
+
+##### Water
+water.geomdist.df<-data.frame(Distance=water.geodist[lower.tri(water.geodist)],
+                  BrayCurtis= water.otu.dist[lower.tri(water.otu.dist)])
+
+# plot for water
+water_dist_plot<- ggplot(water.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="dodgerblue3") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite water")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+###### new dataframe for plotting
+##### Cladocera
+cladoc.geomdist.df<-data.frame(Distance=cladoc.geodist[lower.tri(cladoc.geodist)],
+                  BrayCurtis= cladoc.otu.dist[lower.tri(cladoc.otu.dist)])
+
+#Generate plots for all samples combined
+cladoc_dist_plot<- ggplot(cladoc.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="mediumseagreen") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Cladocera")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+###### new dataframe for plotting
+##### Copepoda
+copepo.geomdist.df<-data.frame(Distance=copepo.geodist[lower.tri(copepo.geodist)],
+                  BrayCurtis= copepo.otu.dist[lower.tri(copepo.otu.dist)])
+
+#Generate plots for all samples combined
+copepo_dist_plot<- ggplot(copepo.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="coral") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Copepoda")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+# combine plots
+dist.decay.functional<-plot_grid(all_dist_plot, water_dist_plot, 
+                           cladoc_dist_plot, copepo_dist_plot, 
+                           ncol=2, rel_widths = c(3,3,3,3))
+dist.decay.functional
+dev.copy(pdf, "figures/dist.decay.func.4pan.pdf", width=9, height=7) # works but may require cairo pdf
+dev.off()
+```
+
+```{r}
+# water vs. zoopl distance decay 
+#Calculate mantel
+m= mantel(cladoc.otu.dist, water.otu.dist)
+
+```
+
+```{r distance decay by species}
+######  ######  ######  ######  ###### 
+###### new dataframe for plotting
+##### Daphnia
+daph.geomdist.df<-data.frame(Distance=daph.geodist[lower.tri(daph.geodist)],
+                  BrayCurtis= daph.otu.dist[lower.tri(daph.otu.dist)])
+
+#Generate plots for all samples combined
+daph_dist_plot<- ggplot(daph.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="olivedrab") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Daphnia")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+##### Ceriodaphnia
+ceriod.geomdist.df<-data.frame(Distance=ceriod.geodist[lower.tri(ceriod.geodist)],
+                  BrayCurtis= ceriod.otu.dist[lower.tri(ceriod.otu.dist)])
+
+#Generate plots for all samples combined
+ceriod_dist_plot<- ggplot(ceriod.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="mediumseagreen") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Ceriodaphnia")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+##### Bosmina
+bosm.geomdist.df<-data.frame(Distance=bosm.geodist[lower.tri(bosm.geodist)],
+                  BrayCurtis= bosm.otu.dist[lower.tri(bosm.otu.dist)])
+
+#Generate plots for all samples combined
+bosm_dist_plot<- ggplot(bosm.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="palegreen2") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Bosmina")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+##### Holopedium
+holop.geomdist.df<-data.frame(Distance=holop.geodist[lower.tri(holop.geodist)],
+                  BrayCurtis= holop.otu.dist[lower.tri(holop.otu.dist)])
+
+#Generate plots for all samples combined
+holop_dist_plot<- ggplot(holop.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="lightblue") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Holopedium")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+##### Polyphemus
+polyph.geomdist.df<-data.frame(Distance=polyph.geodist[lower.tri(polyph.geodist)],
+                  BrayCurtis= polyph.otu.dist[lower.tri(polyph.otu.dist)])
+
+#Generate plots for all samples combined
+polyph_dist_plot<- ggplot(polyph.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="aquamarine4") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Polyphemus")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+##### Calanoids
+calan.geomdist.df<-data.frame(Distance=calan.geodist[lower.tri(calan.geodist)],
+                  BrayCurtis= calan.otu.dist[lower.tri(calan.otu.dist)])
+
+#Generate plots for all samples combined
+calan_dist_plot<- ggplot(calan.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="lightcoral") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Calanoid")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+##### Cyclopoid
+cyclo.geomdist.df<-data.frame(Distance=cyclo.geodist[lower.tri(cyclo.geodist)],
+                  BrayCurtis= cyclo.otu.dist[lower.tri(cyclo.otu.dist)])
+
+#Generate plots for all samples combined
+cyclo_dist_plot<- ggplot(cyclo.geomdist.df, aes(x=log(Distance+1), y=BrayCurtis)) +
+  geom_point(size=0.8,alpha=0.5, color="firebrick") +
+  geom_smooth(method = "glm", formula = y~x,
+              method.args = list(family = gaussian(link = 'log')), lwd=0.7, color="gray40")+ 
+  ggtitle("Yosemite Cyclopoid")+ 
+  scale_y_continuous(name="Bray-Curtis Dissimilarity",breaks=seq(0,1,0.25),limits=c(0,1)) +
+  scale_x_continuous(name="log(Distance (km)+1)",breaks=seq(0,5,1),limits=c(0,5)) +
+  decay.fig.format
+
+
+########## cladocerans
+dist.decay.functional.cladocerans<-plot_grid(daph_dist_plot, ceriod_dist_plot, bosm_dist_plot,
+                           holop_dist_plot, polyph_dist_plot,
+                           ncol=3)
+dist.decay.functional.cladocerans
+dev.print(pdf, "figures/dist.decay.func.cladoc.pdf", width=12, height=8)
+dev.off()
+
+########## copepods
+dist.decay.functional.copepods<-plot_grid(copepo_dist_plot, calan_dist_plot, cyclo_dist_plot,
+                           ncol=3, rel_widths = c(3,3,3))
+dist.decay.functional.copepods
+dev.print(pdf, "figures/dist.decay.func.copep.pdf", width=12, height=5)
+dev.off()
+
+```
+
+
+Shannon alpha diversity across sample types and years
+```{r richness}
+# richness by organism (or sample type i.e, water)
+# using the non-rarified data here b
+
+# get out of phyloseq
+Shan.rich<-estimate_richness(PS.rar, measures =c("Observed", "Shannon")) # using rarified transformed data
+Shan.rich.df<-merge(data.frame(sample_data(PS.rar)), Shan.rich, by = "row.names") # merge 
+
+Richness.rare.observed<-ggplot(Shan.rich.df, aes(genus.func.group, Observed)) +
+  theme_bw() +
+  geom_point(position = position_dodge(0.75), size=0.5, alpha=0.6, fill="seagreen") + 
+  geom_boxplot(outlier.shape = NA, alpha=0.6, fill="seagreen")+ 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+
+Shannon.plot.rare<-ggplot(Shan.rich.df, aes(genus.func.group, Shannon)) +
+  theme_bw() +
+  geom_point(position = position_dodge(0.75), size=0.5, alpha=0.6, fill="dodgerblue") + 
+  geom_boxplot(outlier.shape = NA, alpha=0.6, fill="dodgerblue")+ 
+  #scale_fill_manual(values=c("seagreen", "dodgerblue")) +
+  #scale_color_manual(values=c("seagreen", "dodgerblue")) +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+
+plot_grid(Richness.rare.observed, Shannon.plot.rare, ncol=1)
+dev.print(pdf, "figures/Shannon.obs.rare.pdf", height=10, width=7)
+dev.off() 
+
+# some stats
+rich.stat<- lm(Observed~ genus.func.group, data=Shan.rich.df); anova(rich.stat)
+shan.stat<- lm(Shannon~ genus.func.group, data=Shan.rich.df); anova(shan.stat)
+
+#  posthoc
+rich.test<-emmeans(rich.stat, pairwise~genus.func.group)
+multcomp::cld(rich.test, Letters=letters)
+
+#  posthoc
+shan.test<-emmeans(shan.stat, pairwise~genus.func.group)
+multcomp::cld(shan.test, Letters=letters)
+```
+
+Richness across samples and elevation
+```{r relationship with richness}
+# reorder lake by relative elevation
+Shan.rich.df$lake<-reorder(Shan.rich.df$lake, Shan.rich.df$elevation..m)
+
+RichLAKE.rare.observed<-ggplot(Shan.rich.df, aes(lake, Shannon)) +
+  theme_bw() +
+  geom_point(position = position_dodge(0.75), size=0.5, alpha=0.6, fill="dodgerblue") + 
+  geom_boxplot(outlier.shape = NA, alpha=0.6, fill="dodgerblue")+ 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))+
+  xlab("Lake: low to high elevation (m)")
+
+RichLAKE.rare.observed
+dev.print(pdf, "figures/rich.elev.shan.lake.rare.pdf", height=6, width=8)
+dev.off() 
+
+
+#Generate plots for all samples combined
+anova(lm(log(Observed)~ elevation..m, data=Shan.rich.df)) # signif 0.005
+summary(lm(log(Observed)~ elevation..m, data=Shan.rich.df)) # R2-asjust 0.01
+
+observ.elevation_plot<- ggplot(Shan.rich.df, aes(elevation..m, log(Observed))) +
+  geom_point(size=0.8,alpha=0.5, color="mediumseagreen") +
+  geom_smooth(method = "lm", formula = y~x, lwd=0.7, color="gray40")+ 
+  ggtitle("Observed x elevation")+ 
+  ylab("log(Observed Richness)") +
+  xlab("Elevation (m)") +
+  ggtitle("Observed richness by elevation")+
+  decay.fig.format
+
+observ.elevation_plot
+dev.print(pdf, "figures/rich.elev.log.obs.rare.pdf", height=4, width=3)
+dev.off() 
+
+#Generate plots for all samples combined
+anova(lm(Shannon~ elevation..m, data=Shan.rich.df)) # signif 0.003
+summary(lm(Shannon~ elevation..m, data=Shan.rich.df)) # R2-asjust 0.01
+
+shannon.elevation_plot<- ggplot(Shan.rich.df, aes(elevation..m, Shannon)) +
+  geom_point(size=0.8,alpha=0.5, color="dodgerblue") +
+  geom_smooth(method = "lm", formula = y~x, lwd=0.7, color="gray40")+ 
+  ggtitle("Shannon x elevation")+ 
+  scale_y_continuous(name="Shannon") +
+  scale_x_continuous(name="Elevation (m)") +
+  decay.fig.format
+```
+
+Number of Genera across samples
+```{r inspect genus}
+# Create a factor corresponding to the Genera
+genfac = factor(tax_table(PS.RARE)[, "Genus"])
+# Tabulate the counts for each genera in each sample
+gentab = apply(otu_table(PS.RARE), MARGIN = 1, function(x) {
+    tapply(x, INDEX = genfac, FUN = sum, na.rm = TRUE, simplify = TRUE)
+})
+head(gentab)[, 1:10]
+
+# To get number of non-zero genera per sample, sum the values that are above
+# your threshold, in your case, 1.
+observationThreshold = 1
+gen.numb<-as.data.frame(apply(gentab > observationThreshold, 2, sum))
+gen.add<-merge(Rare.df, gen.numb, by = "row.names", all = TRUE)
+gen.add<- gen.add %>%
+  dplyr::rename(numb.genera = "apply(gentab > observationThreshold, 2, sum)")
+
+######### plot
+# of genera by elevation
+Genus.rare.elev<-ggplot(gen.add, aes(x=elevation..m, y=log(numb.genera))) +
+  geom_point(size=0.8,alpha=0.5, color="violet") +
+  geom_smooth(method = "lm", formula = y~x, lwd=0.7, color="gray40")+ 
+  ggtitle("Genera x elevation")+ 
+  ylab("log(# Genera)") +
+  xlab("Elevation (m)")+
+  decay.fig.format
+  
+# Generate plots for all samples combined
+anova(lm(log(numb.genera)~ elevation..m, data=gen.add)) # signif <0.001
+summary(lm(log(numb.genera)~ elevation..m, data=gen.add)) # R2-asjust 0.02
+
+
+#### 
+# of genera with location
+Genus.rare.Organism<-ggplot(gen.add, aes(Genus.Func.group, numb.genera)) +
+  theme_bw() +
+  geom_point(position = position_dodge(0.75), size=0.5, alpha=0.6, fill="violet") + 
+  geom_boxplot(outlier.shape = NA, alpha=0.6, fill="violet")+ 
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))+
+  ggtitle("MicroGenera x Zoop Group")+ 
+  ylab("# Genera)") +
+  xlab("Organism")+
+  decay.fig.format
+```
+
+Ordination in NMDS 
+```{r NMDS ordination}
+T.2021<- subset_samples(PS.rar, Year=="2021")
+T.2022<- subset_samples(PS.rar, Year=="2022")
+
+NMDS.all <- ordinate(ps.hell, method='NMDS', distance='bray') # full data
+NMDS.2021 <- ordinate(T.2021, method='NMDS', distance='bray') # 2021 data
+NMDS.2022 <- ordinate(T.2022, method='NMDS', distance='bray') # 2022 data
+
+# by each genus, functional group
+NMDS.ord.gen.func.ALL<-plot_ordination(
+  physeq = ps.hell,                                                   
+  ordination = NMDS.all) +                                                
+  geom_point(aes(color = Genus.Func.group , shape=Year), size = 1.5) +    
+  stat_ellipse(level=0.9, linetype = 2, aes(color=Genus.Func.group)) +
+  #scale_color_brewer(palette = "Dark2") +
+  #scale_fill_brewer(palette = "Dark2") + 
+  ggtitle("2021-22 Zoop") +
+  theme_classic()   
+
+NMDS.ord.gen.func.ALL$layers <- NMDS.ord.gen.func.ALL$layers[-1]
+# will remove the original layer of points form phyloseq
+
+###########
+# by each genus, functional group: 2021
+NMDS.ord.gen.func.21<-plot_ordination(
+  physeq = T.2021,                                                   
+  ordination = NMDS.2021) +                                                
+  geom_point(aes(color = Genus.Func.group), size = 1.5) +    
+  stat_ellipse(level=0.9, linetype = 2, aes(color=Genus.Func.group)) +
+  #scale_color_brewer(palette = "Dark2") +
+  #scale_fill_brewer(palette = "Dark2") + 
+  ggtitle("2021 Zoop") +
+  theme_classic()  
+
+NMDS.ord.gen.func.21$layers <- NMDS.ord.gen.func.21$layers[-1]
+# will remove the original layer of points form phyloseq
+
+###########
+# by each genus, functional group: 2022
+NMDS.ord.gen.func.22<-plot_ordination(
+  physeq = T.2022,                                                   
+  ordination = NMDS.2022) +                                                
+  geom_point(aes(color = Genus.Func.group), size = 1.5) +    
+  stat_ellipse(level=0.9, linetype = 2, aes(color=Genus.Func.group)) +
+  #scale_color_brewer(palette = "Dark2") +
+  #scale_fill_brewer(palette = "Dark2") + 
+  ggtitle("2022 Zoop") +
+  theme_classic()  
+
+NMDS.ord.gen.func.22$layers <- NMDS.ord.gen.func.22$layers[-1]
+# will remove the original layer of points form phyloseq
+
+#########
+NMDS.leg.genfunc<-get_legend(
+  NMDS.ord.gen.func.ALL + 
+    theme(legend.box.margin = margin(0, 0, 0, 20)) +
+    theme(legend.title=element_blank())+ # no need for a title above legend
+    theme(legend.key.size = unit(0.5, "cm")))
+
+NMDS.genus.func<-plot_grid(NMDS.ord.gen.func.ALL + theme(legend.position = "none"), 
+                           NMDS.ord.gen.func.21 + theme(legend.position = "none"), 
+                           NMDS.ord.gen.func.22 + theme(legend.position = "none"), 
+                           NMDS.leg.genfunc, ncol=4, rel_widths = c(3,3,3, 1))
+NMDS.genus.func
+dev.print(pdf, "figures/NMDS.genus.func.3pan.pdf", width=14, height=7, encod="MacRoman")
+dev.off()
+
+```
+
+Do ordination in PCoA
+```{r PCoA ordination}
+# ps.hell.lim<-prune_samples(sample_sums(ps.zoop.wat) > 1000, ps.zoop.wat), improved at 5000 
+
+PCoA.all <- ordinate(PS.RARE, method='MDS', distance='bray') # full data
+T.2021<- subset_samples(PS.RARE, Year=="2021")
+T.2022<- subset_samples(PS.RARE, Year=="2022")
+
+PCoA.2021 <- ordinate(T.2021, method='MDS', distance='bray') # 2021 data
+PCoA.2022 <- ordinate(T.2022, method='MDS', distance='bray') # 2022 data
+
+# estimate gradient lengths for first few axes
+# summary(decorana(otu_table(ps.hell)), display='none')
+
+
+# by each genus, functional group
+PCoA.ord.gen.func.ALL<-plot_ordination(
+  physeq = PS.RARE,                                                   
+  ordination = PCoA.all) +                                                
+  geom_point(aes(color = Genus.Func.group , shape=Year), size = 1.5) +    
+  stat_ellipse(level=0.9, linetype = 2, aes(color=Genus.Func.group)) +
+  #scale_color_brewer(palette = "Dark2") +
+  #scale_fill_brewer(palette = "Dark2") + 
+  ggtitle("2021-22 Zoop") +
+  theme_classic()   
+
+PCoA.ord.gen.func.ALL$layers <- PCoA.ord.gen.func.ALL$layers[-1]
+# will remove the original layer of points form phyloseq
+
+###########
+# by each genus, functional group: 2021
+PCoA.ord.gen.func.21<-plot_ordination(
+  physeq = T.2021,                                                   
+  ordination = PCoA.2021) +                                                
+  geom_point(aes(color = Organism), size = 1.5) +    
+  stat_ellipse(level=0.9, linetype = 2, aes(color=Organism)) +
+  #scale_color_brewer(palette = "Dark2") +
+  #scale_fill_brewer(palette = "Dark2") + 
+  ggtitle("2021 Zoop") +
+  theme_classic()  
+
+PCoA.ord.gen.func.21$layers <- PCoA.ord.gen.func.21$layers[-1]
+# will remove the original layer of points form phyloseq
+
+###########
+# by each genus, functional group: 2022
+PCoA.ord.gen.func.22<-plot_ordination(
+  physeq = T.2022,                                                   
+  ordination = PCoA.2022) +                                                
+  geom_point(aes(color = Genus.Func.group), shape=17, size = 1.5) +    
+  stat_ellipse(level=0.9, linetype = 2, aes(color=Genus.Func.group)) +
+  #scale_color_brewer(palette = "Dark2") +
+  #scale_fill_brewer(palette = "Dark2") + 
+  ggtitle("2022 Zoop") +
+  theme_classic()  
+
+PCoA.ord.gen.func.22$layers <- PCoA.ord.gen.func.22$layers[-1]
+# will remove the original layer of points form phyloseq
+
+#########
+PCoA.leg.genfunc<-get_legend(
+  PCoA.ord.gen.func.ALL + 
+    theme(legend.box.margin = margin(0, 0, 0, 20)) +
+    theme(legend.title=element_blank())+ # no need for a title above legend
+    theme(legend.key.size = unit(0.5, "cm")))
+
+PCoA.genus.func<-plot_grid(PCoA.ord.gen.func.ALL + theme(legend.position = "none"), 
+                           PCoA.ord.gen.func.21 + theme(legend.position = "none"), 
+                           PCoA.ord.gen.func.22 + theme(legend.position = "none"), 
+                           PCoA.leg.genfunc, ncol=4, rel_widths = c(3,3,3, 1))
+PCoA.ord.gen.func.ALL
+dev.print(pdf, "figures/PCoA.genus.func.3pan.pdf", width=8, height=5, encod="MacRoman")
+dev.off()
+
+```
+
+```{r ordination in vegan with envfit}
+# FYI.... moving back to phyloseq 
+
+### move an OTU table from vegan to phyloseq  
+#otu_table(PhyloseqObject) <- otu_table(veganOTUobject, taxa_are_rows=TRUE)  
+### move sample data from vegan to phyloseq
+#sample_data(PhyloseqObject) <- as.data.frame(veganSampleDataObject)
+
+
+# convert the sample_data() within a phyloseq object to a vegan compatible data object
+pssd2veg <- function(physeq) {
+  sd <- sample_data(physeq)
+  return(as(sd,"data.frame"))
+}
+
+# convert the otu_table() within a phyloseq object to a vegan compatible data object
+psotu2veg <- function(physeq) {
+  OTU <- otu_table(physeq)
+  if (taxa_are_rows(OTU)) {
+    OTU <- t(OTU)
+  }
+  return(as(OTU, "matrix"))
+}
+
+# get env. data
+Rare.env<- Rare.df %>%
+  dplyr::select(latitude, longitude, elevation..m, depth..m, temp..C, DO..perc, SPC, pH, 
+                TN..ug.L, TP..ug.L, DOC..mg.L, chla..ug.L)
+
+
+####### try in NMDS, using bray-curtis dissimilarity
+# bray curtis diss. matrix for PCoA
+bc.PC.rar<-as.matrix(vegdist(Rare.otu,  method = "bray"))
+
+# k = 3 dimensions for NMDs1-3
+set.seed(520)
+NMDS = metaMDS(bc.PC.rar, k=3, trymax=100)
+stressplot(NMDS)
+
+# In this part, we define a function NMDS.scree() that automatically -- it takes time!
+# performs a NMDS for 1-10 dimensions and plots the nr of dimensions vs the stress
+# NMDS.scree <- function(x) { #where x is the name of the data frame variable
+#  plot(rep(1, 10), replicate(10, metaMDS(x, autotransform = F, k = 1)$stress), xlim = c(1, 10),ylim = c(0, 0.30), xlab = # "# of Dimensions", ylab = "Stress", main = "NMDS stress plot")
+#  for (i in 1:10) {
+#    points(rep(i + 1,10),replicate(10, metaMDS(x, autotransform = F, k = i + 1)$stress))
+#  }
+#}
+
+# NMDS.scree(bc.PC.rar)
+
+# get NDMS 1 and 2
+scrs <- as.data.frame(scores(NMDS, display = "sites"))
+
+#merge scores and the rarfied data
+NMDS.plot.df=merge(Rare.df, scrs, by = "row.names", all = TRUE)
+
+# run env.fit 
+# the r2 data is used to scale the values in columns NMDS1 and NMDS2
+set.seed(123)
+vf <- envfit(NMDS, Rare.env, perm = 999, na.rm = TRUE) #lots of significance, excpet DO and chla
+
+# what is the correlation here? remove NAs and make correlation matrix
+Rare.env.red<-na.omit(Rare.env)
+# Compute correlation at 2 decimal places
+corr_matrix = round(cor(Rare.env.red), 2)
+# Compute and show the  result
+ggcorrplot(corr_matrix, hc.order = TRUE, type = "lower",
+          lab = TRUE)
+
+### export it
+dev.copy(pdf, "figures/correl.matrix.env.pdf", height=6, width=8)
+dev.off()
+
+# make the plot
+spp.scrs <- as.data.frame(scores(vf, display = "vectors"))
+spp.scrs.test <- cbind(spp.scrs, r=vf$vectors[2], pvals=vf$vectors[4], Envfact = rownames(spp.scrs))
+names(spp.scrs.test)[names(spp.scrs.test) == 'r'] <- 'r2' # rename bc vector has naming issues
+
+# subset to keep only those Envfactors that are significant 
+spp.scrs.signif<-spp.scrs.test[spp.scrs.test$pvals< 0.05, ]
+
+NMDS.env <- ggplot(NMDS.plot.df) +
+  geom_point(mapping = aes(x = NMDS1, y = NMDS2, colour = Genus.Func.group)) +
+  coord_fixed() + ## need aspect ratio of 1!
+  geom_segment(data = spp.scrs.signif,
+               aes(x = 0, xend = NMDS1, y = 0, yend = NMDS2),
+               arrow = arrow(length = unit(0.25, "cm")), colour = "grey") +
+  geom_text(data = spp.scrs.signif, aes(x = NMDS1, y = NMDS2, label = Envfact),
+            size = 3)+
+  theme_classic()
+
+NMDS.env
+dev.copy(pdf, "figures/NMDS.env.pdf", height=7, width=7)
+dev.off()
+
+
+#make the model for PERMANOVA
+set.seed(213)
+Perm.rare<-adonis2(Rare.otu~Lake+Genus.Func.group, data=Rare.df,
+                      permutations=999,method="bray")
+Perm.rare
+
+# zoops pairwise
+Perm.rare.pairw<-pairwise.adonis(Rare.otu, factors=c(Rare.df$Genus.Func.group), p.adjust.m = "hochberg")
+Perm.rare.pairw
+
+# water pairwise
+Perm.rare.pairw.lake<-pairwise.adonis(Rare.otu, factors=c(Rare.df$Lake), p.adjust.m = "hochberg")
+Perm.rare.pairw.lake
+```
+
+```{r}
+# other takes
+NMDS.treeline <- ggplot(NMDS.plot.df) +
+  geom_point(mapping = aes(x = NMDS1, y = NMDS2, shape=Year, colour = tree.line), size=1.7) +
+  coord_fixed() + theme_classic()+
+  scale_color_manual(values=c("dodgerblue", "seagreen3"))+
+  scale_shape_manual(values=c(21, 16))
+
+```
+
+
+```{r ordinationPCA in vegan with envfit}
+# run PCA on BC dissimilarity
+env.PCA <- prcomp(bray.PC.rar, center = TRUE, scale= TRUE) # with HabitatType in dataframe
+
+# inspect
+PC.summary<-(summary(env.PCA))
+ev<-env.PCA$sdev^2
+newdat<-env.PCA$x[,1:4]
+plot(env.PCA, type="lines", main="env.PCA eigenvalues")
+```
+
+
+```{r}
+# hull plot
+gg_ordiplot(rda(otu_table(ps.hell)), groups=sample_data(ps.hell)$Functional.group, 
+            ellipse=F, spider=T)
+
+```
+
+```{r}
+# network test
+
+plot_net(PS.RARE, maxdist = 0.4, point_label = "Organism")
+
+ig <- make_network(PS.RARE, max.dist=0.4)
+plot_network(ig, PS.RARE, color="Organism", shape="Year", line_weight=0.5, label=NULL)
+
+#network copepods
+ps.copep.rare<-subset_samples(PS.RARE, Functional.group=="copepoda")
+ig <- make_network(ps.copep.rare, max.dist=0.5)
+cop.network<-plot_network(ig, ps.copep.rare, color="Organism", shape="Year", line_weight=0.5, label="Lake")
+
+cop.network
+dev.copy(pdf, "figures/cop.network.lab.pdf", height=8, width=8)
+dev.off()
+
+#network cladocerans
+ps.cladoc.rare<-subset_samples(PS.RARE, Functional.group=="cladocera")
+ig <- make_network(ps.cladoc.rare, max.dist=0.5)
+clad.network<-plot_network(ig, ps.cladoc.rare, color="Organism", shape="Year", line_weight=0.5, label=NULL)
+
+clad.network
+dev.copy(pdf, "figures/clad.network.nolab.pdf", height=8, width=8)
+dev.off()
+```
+
+```{r}
+################### Subset data for network analysis
+###################
+# complete data (from long above in 'Fungal amplicon, ESVs' code chunk): 'haka_VT_soil_physeq'
+
+### Subset phyloseq object into different hab types and then by soil--using virtual taxa
+Daph.physeq = subset_samples(ps.hell, Genus.Func.group=="daphnia")
+
+### Construct networks using Spiec Easi (save in case R crashes as an RDS file)
+se.daph<- spiec.easi(Daph.physeq, method='mb', lambda.min.ratio=1e-2, nlambda=20, pulsar.params=list(rep.num=100))
+saveRDS(se.daph,"output/spiec_easi_files/se.daph.RData")
+se.daph<- readRDS("output/spiec_easi_files/se.daph.RData")
+
+### Convert to igraph objects for plotting and computing graph statistics.
+#Bring in edge weights
+ig.daph<-adj2igraph(ig.daph$refit$stars, vertex.attr=list(name=taxa_names(Daph.physeq)))
+
+
+```
+
